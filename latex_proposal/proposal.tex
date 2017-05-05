@@ -4,11 +4,15 @@
 
 \usepackage{adjustbox}
 \usepackage{graphicx}
+\usepackage{alphalph}
 
 \let\OLDitemize\itemize
-\renewcommand\itemize{\OLDitemize\addtolength{\itemsep}{1.5em}}
+\renewcommand\itemize{\OLDitemize\addtolength{\itemsep}{1em}}
 \let\OLDenumerate\enumerate
-\renewcommand\enumerate{\OLDenumerate\addtolength{\itemsep}{1.5em}}
+\renewcommand\enumerate{\OLDenumerate\addtolength{\itemsep}{1em}}
+\renewcommand\thesubsectiondis{\AlphAlph{\value{subsection}}.}% for the headings in the text
+\renewcommand\thesubsection{\mbox{\thesection-\AlphAlph{\value{subsection}}}}% for the ToC, for example     
+
 
 % correct bad hyphenation here
 \hyphenation{op-tical net-works semi-conduc-tor}
@@ -265,29 +269,352 @@ There are numerous codes that are floating on the internet. But it is not verifi
 \label{sub:software_in_use}
 
 \begin{enumerate}
-  \item \textit{Sublime Text 3} Text editor for general use
-  \item \textit{qt designer 4.12} GUI based GUI designer for Qt environment
-  \item \textit{pyCharm} genral IDE for Python
-  \item \textit{pandas} Python package to deal with datas
-  \item \textit{PyQt4} Python package to deal with Qt gui
-  \item \textit{stackexchage REST API} REST API to do stack overflow search and get datas
-  \item \textit{beautifulsoup4} Python package for parsing XML and HTML
-  \item \textit{requests} Python package that assists to issue an HTML Request
-  \item \textit{gcc} C compiler to verify given source codes
+  \item \textit{Sublime Text 3}: Text editor for general use
+  \item \textit{qt designer 4.12}: GUI based GUI designer for Qt environment
+  \item \textit{pyCharm}: genral IDE for Python
+  \item \textit{pandas}: Python package to deal with datas
+  \item \textit{PyQt4}: Python package to deal with Qt gui
+  \item \textit{stackexchage REST API}: REST API to do stack overflow search and get datas
+  \item \textit{beautifulsoup4}: Python package for parsing XML and HTML
+  \item \textit{requests}: Python package that assists to issue an HTML Request
+  \item \textit{gcc}: C compiler to verify given source codes
 \end{enumerate}
+\textit{}
 % subsection software_in_use (end)
 % section development_environment (end)
+
 
 \section{SPECIFICATIONS} % (fold)
 \label{sec:specifications}
 
+\textbf{Getting Started}
+
+\subsection{Setting - Easy Installation}
+
+\begin{enumerate}
+  \item Description
+  \begin{itemize}
+    \item Executable without installation to facilitate ease of use
+    \item Works like portable utility
+    \item Basic files only provide barebone program
+    \begin{itemize}
+      \item Programming language to search need be installed later
+    \end{itemize}
+  \end{itemize}
+  \item Process(or I/O)
+  \begin{enumerate}
+    \item Download files from website
+  \end{enumerate}
+\end{enumerate}
+
+
+\textit{}
+
+\subsection{Setting - Configuration Window}
+
+\begin{enumerate}
+  \item Description
+  \begin{itemize}
+    \item Basic program is not able to use without installing programming language
+    \item Provide check window
+    \begin{itemize} 
+      \item Check each window to install a language pack for a certain language 
+    \end{itemize}
+  \end{itemize}
+  \item Process(or I/O)
+  \begin{enumerate}
+    \item Input: Opening conf.exe
+    \item Output: Show conf.exe
+  \end{enumerate}
+\end{enumerate}
+
+\textit{}
+
+\subsection{Setting - Installing Language Pack}
+\begin{enumerate}
+  \item Description
+  \begin{itemize}
+    \item Basic program is not able to use without installing programming language
+    \item Provide check window
+    \begin{itemize}
+      \item Check each window to install a language pack for a certain language 
+    \end{itemize}
+  \end{itemize}
+  \item Process(or I/O)
+  \begin{enumerate}
+    \item Input: Selecting language packs and proceed 
+    \item Output: Pack install on the hard disk
+  \end{enumerate}
+\end{enumerate}
+
+
+\textit{}
+\subsection{Instruction - README}
+\begin{enumerate}
+  \item Description
+  \begin{itemize}
+    \item Provide README file to give basic instruction
+  \end{itemize}
+  \item Process(or I/O)
+  \begin{enumerate}
+    \item N/A
+  \end{enumerate}
+\end{enumerate}
+
+
+\textit{}
+
+\subsection{Instruction - Basic Tutorial}
+\begin{enumerate}
+  \item Description
+  \begin{itemize}
+    \item Give demo-like tutorial on the very first run
+  \end{itemize}
+  \item Process(or I/O)
+  \begin{enumerate}
+    \item Input: Clicking tutorial on main window
+    \item Input2: Initial program execution
+    \item Output: Install selected pack on the hard disk
+  \end{enumerate}
+\end{enumerate}
+
+
+\textit{}
+
+\subsection{Instruction - On the Fly}
+\begin{enumerate}
+  \item Description
+  \begin{itemize}
+    \item Give tooltips on buttons
+  \end{itemize}
+  \item Process(or I/O)
+  \begin{enumerate}
+    \item Input: Hovering on a button for 3 seconds
+    \item Output: Show up a tool tip
+  \end{enumerate}
+\end{enumerate}
+
+\textit{}
+
+\textbf{Execution}
+
+\subsection{Execution}
+\begin{enumerate}
+  \item Description
+  \begin{itemize}
+    \item Executing the main program
+  \end{itemize}
+  \item Process(or I/O)
+  \begin{enumerate}
+    \item Opening the main program(helper.exe)
+    \item Program(Process1. UI) shows up within 1 minute
+  \end{enumerate}
+\end{enumerate}
+
+\textit{}
+
+\subsection{Closing Whole Program}
+\begin{enumerate}
+  \item Description
+  \begin{itemize}
+    \item Closing Whole Program
+  \end{itemize}
+  \item Process(or I/O)
+  \begin{enumerate}
+    \item Clicking X window on search UI
+    \item Program closing
+  \end{enumerate}
+\end{enumerate}
+
+%프롬프트
+\textit{}
+
+\textbf{Process 1. Searching}
+
+\subsection{Search - UI}
+
+
+\textit{}
+
+\subsection{Search - History}
+
+
+\textit{}
+
+\subsection{Search - Option}
+%프로그래밍 언어 선택
+
+\textit{}
+
+\subsection{Search - Auto Completion}
+
+
+\textit{}
+
+\subsection{Request Submission by Key Press}
+
+
+\textit{}
+
+\subsection{Request Submission by Clicking}
+
+
+\textit{}
+
+\subsection{Request Submission - Waiting UI}
+
+
+\textit{}
+
+\subsection{Request Submission - Abort}
+
+
+\textit{}
+
+\subsection{Request Processing - Extracting Keyword}
+
+
+\textit{}
+
+\subsection{Request Processing - Crawling(Stackoverflow)}
+
+
+\textit{}
+
+
+\subsection{Request Processing - Crawling(Google)}
+
+
+\textit{}
+
+\subsection{Request Processing - Detect Code Part}
+
+
+\textit{}
+\subsection{Request Completed - UI}
+
+
+\textit{}
+
+\textbf{Process 2. Code Selction}
+
+\subsection{Code Selection - Basic UI}
+
+
+\textit{}
+
+\subsection{Auto Compile Test - Requesting}
+
+
+\textit{}
+
+\subsection{Auto Compile Test - Success}
+''color of the code section goes green
+
+\textit{}
+
+\subsection{Auto Compile Test - Failure}
+
+
+\textit{}
+
+\subsection{Auto Compile Test - Edit Code Snippet}
+
+
+\textit{}
+
+
+\subsection{Cancellation(2) - Clicking Return Button}
+
+
+\textit{}
+
+
+\subsection{Cancellation(2) - Cliking X Window Button}
+''same as clicking return button
+
+\textit{}
+
+\subsection{Selection - Proceed without testing}
+%put warning window
+
+\textit{}
+
+\subsection{Prompt - Cancellation}
+
+
+\textit{}
+
+\subsection{Prompt - Proceed}
+
+
+\textit{}
+
+\textbf{Process 3. Manual Verification}
+
+\subsection{Manual Verification - UI}
+
+
+\textit{}
+
+\subsection{Manual Testing - Requesting}
+
+
+\textit{}
+
+\subsection{Test Processing - Check Compiling}
+''check if compiled if compiled use that
+
+\textit{}
+
+\subsection{Manual Testing - Success}
+''print output on the output window
+
+\textit{}
+
+\subsection{Manual Testing - Failure}
+''print error message on the output window
+
+\textit{}
+
+\subsection{Cancellation(3) - Clicking Return Button}
+
+
+\textit{}
+
+\subsection{Cancellation(3) - Cliking X Window Button}
+
+
+\textit{}
+
+
+\textbf{Process 4. Result Saving}
+
+\subsection{Result - UI}
+
+
+\textit{}
+
+\subsection{Cancellation(4) - Clicking Return Button}
+
+
+\textit{}
+
+\subsection{Cancellation(4) - Cliking X Window Button}
+
+
+\textit{}
+
+
+
+
+''-------------end of the document-------------------''
+% figure example --------------
 \begin{figure}[h]
 \centering
-\includegraphics[width=2.5in]{myfigure}
-where an .eps filename suffix will be assumed under latex, 
-and a .pdf suffix will be assumed for pdflatex; or what has been declared
-via \DeclareGraphicsExtensions.
-\caption{Simulation results for the network.}
+\includegraphics[width=0.5\textwidth]{./figures/UI_main.jpg}
+%text slot
+\caption{Example Example.}
 \label{fig_sim}
 \end{figure}
 
