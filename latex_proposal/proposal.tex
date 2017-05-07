@@ -287,6 +287,17 @@ There are numerous codes that are floating on the internet. But it is not verifi
 \section{SPECIFICATIONS} % (fold)
 \label{sec:specifications}
 
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{./figures/Process_Flow.png}
+Our targeted users do not know how to code.
+
+Assignment Helper gives the code.
+\caption{Process Flow of Assignment Helper}
+\label{fig_process_flow}
+\end{figure}
+
+
 \textbf{Getting Started}
 
 \subsection{Setting - Easy Installation}
@@ -306,9 +317,8 @@ There are numerous codes that are floating on the internet. But it is not verifi
     \item Download files from website
   \end{enumerate}
 \end{enumerate}
-
-
 \textit{}
+
 
 \subsection{Setting - Configuration Window}
 
@@ -425,198 +435,521 @@ There are numerous codes that are floating on the internet. But it is not verifi
     \item Program closing
   \end{enumerate}
 \end{enumerate}
+\textit{}
+
 
 %프롬프트
-\textit{}
-
 \textbf{Process 1. Searching}
 
+
+\textit{}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{./figures/UI_main.jpg}
+%text slot
+\caption{Concept Image of Search Window}
+\label{fig_concept_main}
+\end{figure}
+
+
 \subsection{Search - UI}
-
-
+\begin{enumerate}
+\item Description
+\begin{itemize}
+   \item Give instinctive search home
+\end{itemize}
+\item Process(or I/O)
+  \begin{enumerate}
+     \item Clicking search button on search UI
+     \item Search begins
+  \end{enumerate}
+\end{enumerate}
 \textit{}
 
-\subsection{Search - History}
-
-
+\subsection{Search – History}
+\begin{enumerate}
+\item Description
+\begin{itemize}
+   \item Show searh history
+\end{itemize}
+\item Process(or I/O)
+  \begin{enumerate}
+     \item Output: Show up top 5 from search history list
+  \end{enumerate}
+\end{enumerate}
 \textit{}
 
-\subsection{Search - Option}
-%프로그래밍 언어 선택
-
+\subsection{Search – Option}
+\begin{enumerate}
+\item Description
+\begin{itemize}
+  \item Choose in what programming language result represent
+  \begin{itemize}
+     \item Show language option buttons
+  \end{itemize}
+\end{itemize}
+\item Process(or I/O)
+  \begin{enumerate}
+    \item Input: click on a python button 
+    \item Output: Show result on a python language 
+    \item Input: click on a C button 
+    \item Output: Show result on a C language 
+    \item Input: click on a C++ button 
+    \item Output: Show result on a C++ language 
+  \end{enumerate}
+\end{enumerate}
 \textit{}
 
-\subsection{Search - Auto Completion}
-
-
+\subsection{Search – Auto Completion}
+\begin{enumerate}
+\item Description
+\begin{itemize}
+  \item Show match from search ketwords.csv
+\end{itemize}
+\item Process(or I/O)
+  \begin{enumerate}
+     \item Input: Each letters typed
+    \item Output: Show all match words from search ketwords.csv
+  \end{enumerate}
+\end{enumerate}
 \textit{}
 
 \subsection{Request Submission by Key Press}
-
-
+\begin{enumerate}
+\item Description
+\begin{itemize}
+  \item Submit request by typing enter 
+\end{itemize}
+\item Process(or I/O)
+  \begin{enumerate}
+  \item Input: type enter key
+  \item Output: Submit request
+  \end{enumerate}
+\end{enumerate}
 \textit{}
 
 \subsection{Request Submission by Clicking}
-
-
+\begin{enumerate}
+\item Description
+\begin{itemize}
+  \item Submit request by click 
+\end{itemize}
+\item Process(or I/O)
+  \begin{enumerate}
+     \item Input: mouse click
+    \item Output: Submit request
+  \end{enumerate}
+\end{enumerate}
 \textit{}
 
 \subsection{Request Submission - Waiting UI}
-
-
+\begin{enumerate}
+\item Description
+\begin{itemize}
+  \item Halt user interface while submission 
+\end{itemize}
+\item Process(or I/O)
+  \begin{enumerate}
+     \item input: Submit request 
+     \item Output: Freeze UI
+  \end{enumerate}
+\end{enumerate}
 \textit{}
 
 \subsection{Request Submission - Abort}
-
-
+\begin{enumerate}
+\item Description
+   \begin{itemize}
+  \item User press cancel
+  \item Error occurs
+  \item End submission
+  \item Back to search window 
+\end{itemize}
+\item Process(or I/O)
+  \begin{enumerate}
+     \item input: Click cancel button
+     \item input: Error occurs 
+     \item Output: Stop submission
+     \item Output: Back to start page
+  \end{enumerate}
+\end{enumerate}
 \textit{}
 
-\subsection{Request Processing - Extracting Keyword}
-
-
+\subsection{Request Submission – Extracting Keyword}
+\begin{enumerate}
+\item Description
+\begin{itemize}
+  \item Extract keywords from submitted  
+\end{itemize}
+\item Process(or I/O)
+  \begin{enumerate}
+     \item input: Submit request 
+     \item Output: Freeze UI
+  \end{enumerate}
+\end{enumerate}
 \textit{}
 
 \subsection{Request Processing - Crawling(Stackoverflow)}
-
-
+\begin{enumerate}
+\item Description
+\begin{itemize}
+  \item Crawl popular codes
+  \item Organize codes by keywords
+  \item Process(or I/O) 
+  \item Crawl Stackoverflow by keywords.csv
+  \item Give code with popularity over 3/5 to code page
+\end{itemize}
+\begin{enumerate}
+     \item Make keyword a key 
+     \item Organize code page by keyword order
+  \end{enumerate}
+\end{enumerate}
 \textit{}
 
-
 \subsection{Request Processing - Crawling(Google)}
+\begin{enumerate}
+\item Description
 
-
+\begin{itemize} 
+  \item Crawl popular codes
+  \item Organize codes by keywords
+  \item Process(or I/O)
+  \item Crawl Google by keywords.csv
+  \item Give code with popularity over 3/5 to code page
+\end{itemize}
+  \begin{enumerate}
+     \item Make keyword a key 
+     \item Organize code page by keyword order
+  \end{enumerate}
+\end{enumerate}
 \textit{}
 
 \subsection{Request Processing - Detect Code Part}
-
-
+\begin{enumerate}
+\item Description
+  \begin{itemize}
+    \item Do encoding test to know if it is right code
+  \end{itemize}
+  \item Process(or I/O)
+  \begin{enumerate}
+    \item Encode code page
+    \item output: error code
+  \end{enumerate}
+\end{enumerate}
 \textit{}
-\subsection{Request Completed - UI}
 
+
+\subsection{Request Completed - UI}
+\begin{enumerate}
+  \item Description
+  \begin{itemize}
+    \item Give code page to selection
+  \end{itemize}
+  \item Process(or I/O)
+  \begin{enumerate}
+    \item Give all crawled code page to selection phase
+  \end{enumerate}
+\end{enumerate}
 
 \textit{}
 
 \textbf{Process 2. Code Selction}
 
+
+\textit{}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{./figures/UI_code_select.jpg}
+%text slot
+\caption{Concept Image of Code Select Window}
+\label{fig_concept_code_select}
+\end{figure}
+
+
 \subsection{Code Selection - Basic UI}
+
+\begin{enumerate}
+  \item Description
+  \begin{itemize}
+    \item User should select code among results before program starts other process
+  \end{itemize}
+  \item Process(or I/O)
+  \begin{enumerate}
+    \item Clicking code among results
+    \item Next process starts within 5 seconds
+  \end{enumerate}
+\end{enumerate}
 
 
 \textit{}
 
 \subsection{Auto Compile Test - Requesting}
 
+\begin{enumerate}
+  \item Description
+  \begin{itemize}
+    \item Right after user selects code, program is compiling the code(See Figure~\ref{fig_concept_code_compile} )
+  \end{itemize}
+  \item Process(or I/O)
+  \begin{enumerate}
+    \item Input : Text that user chose
+    \item Output: Test. Program format
+  \end{enumerate}
+\end{enumerate}
+
+\textit{}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{./figures/UI_code_validation.jpg}
+%text slot
+\caption{Concept Image of Code Compiling}
+\label{fig_concept_code_compile}
+\end{figure}
 
 \textit{}
 
 \subsection{Auto Compile Test - Success}
-''color of the code section goes green
+
+\begin{enumerate}
+  \item Description
+  \begin{itemize}
+    \item If compiling is finished successfully, without error code, code box goes green
+  \end{itemize}
+  \item Process(or I/O)
+  \begin{enumerate}
+    \item Waiting for finish of compiling
+    \item Check whether error code exists or not (No error code = Success)
+  \end{enumerate}
+\end{enumerate}
 
 \textit{}
 
 \subsection{Auto Compile Test - Failure}
 
+\textit{}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{./figures/UI_code_validation_fail.jpg}
+%text slot
+\caption{Concept Image of Code Testing Failure}
+\label{fig_concept_fail}
+\end{figure}
+
+
+\begin{enumerate}
+  \item Description
+  \begin{itemize}
+    \item If there is error code after compiling, program shows the error code to user (see Figure~\ref{fig_concept_fail})
+  \end{itemize}
+  \item Process(or I/O)
+  \begin{enumerate}
+    \item Waiting for finish of compiling
+    \item Show error code result to user
+    \item Enable users to edit codes if they can find the error.
+  \end{enumerate}
+\end{enumerate}
+
+
 
 \textit{}
 
 \subsection{Auto Compile Test - Edit Code Snippet}
+\begin{enumerate}
+  \item Description
+  \begin{itemize}
+    \item When the auto compile test ended with error, users are able to edit code manually
+  \end{itemize}
+  \item Process(or I/O)
+  \begin{enumerate}
+    \item Input: Error signal from auto compile test
+    \item Output: Enabling users to edit code
+  \end{enumerate}
+\end{enumerate}
 
 
 \textit{}
 
 
 \subsection{Cancellation(2) - Clicking Return Button}
-
-
+\begin{enumerate}
+  \item Description
+  \begin{itemize}
+    \item After finishing compiling or during compiling, user can go back with clicking return button
+  \end{itemize}
+  \item Process(or I/O)
+  \begin{enumerate}
+    \item Clicking return button
+    \item Go back to the code selection window
+  \end{enumerate}
+\end{enumerate}
 \textit{}
 
 
 \subsection{Cancellation(2) - Cliking X Window Button}
-''same as clicking return button
-
+\begin{enumerate}
+  \item Description
+  \begin{itemize}
+    \item After finishing compiling or during compiling, user can exit program
+  \end{itemize}
+  \item Process(or I/O)
+  \begin{enumerate}
+    \item Clicking X window button
+    \item Terminate program
+  \end{enumerate}
+\end{enumerate}
 \textit{}
+
 
 \subsection{Selection - Proceed without testing}
 %put warning window
-
+\begin{enumerate}
+  \item Description
+  \begin{itemize}
+    \item Users are able to procced without auto compile test
+    \item Autocompile tested bits off
+  \end{itemize}
+  \item Process(or I/O)
+  \begin{enumerate}
+    \item Users click next button
+    \item Proceed to process 3
+  \end{enumerate}
+\end{enumerate}
 \textit{}
+
 
 \subsection{Prompt - Cancellation}
-
-
+\begin{enumerate}
+  \item Description
+  \begin{itemize}
+    \item When user requests cancellation, prompt window appears, reconfirming cancellation
+  \end{itemize}
+  \item Process(or I/O)
+  \begin{enumerate}
+    \item Clicking Return or X window button
+    \item Reconfirming cancellation, Yes or No
+  \end{enumerate}
+\end{enumerate}
 \textit{}
+
+
 
 \subsection{Prompt - Proceed}
-
-
-\textit{}
-
-\textbf{Process 3. Manual Verification}
-
-\subsection{Manual Verification - UI}
-
-
-\textit{}
-
-\subsection{Manual Testing - Requesting}
-
-
-\textit{}
-
-\subsection{Test Processing - Check Compiling}
-''check if compiled if compiled use that
-
-\textit{}
-
-\subsection{Manual Testing - Success}
-''print output on the output window
-
-\textit{}
-
-\subsection{Manual Testing - Failure}
-''print error message on the output window
-
-\textit{}
-
-\subsection{Cancellation(3) - Clicking Return Button}
-
-
-\textit{}
-
-\subsection{Cancellation(3) - Cliking X Window Button}
-
-
+\begin{enumerate}
+  \item Description
+  \begin{itemize}
+    \item Before proceeding compiling, prompt window appears, reconfirming proceeding it
+  \end{itemize}
+  \item Process(or I/O)
+  \begin{enumerate}
+    \item Clicking code
+    \item Reconfirming proceeding, Yes, or No
+  \end{enumerate}
+\end{enumerate}
 \textit{}
 
 
-\textbf{Process 4. Result Saving}
-
-\subsection{Result - UI}
+\textbf{Process 3. Manual Testing and Result Saving}
 
 
 \textit{}
-
-\subsection{Cancellation(4) - Clicking Return Button}
-
-
-\textit{}
-
-\subsection{Cancellation(4) - Cliking X Window Button}
-
-
-\textit{}
-
-
-
-
-''-------------end of the document-------------------''
-% figure example --------------
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.5\textwidth]{./figures/UI_main.jpg}
+\includegraphics[width=0.5\textwidth]{./figures/UI_code_validation_fail.jpg}  
 %text slot
-\caption{Example Example.}
-\label{fig_sim}
+\caption{Concept Image of Code Validation}
+\label{fig_concept_validation_manual}
 \end{figure}
+
+
+\subsection{Result - UI}
+\begin{enumerate}
+  \item Description
+  \begin{itemize}
+    \item Showing result and providing process check and copy function to user (see Figure~\ref{fig_concept_validation_manual}.}
+  \end{itemize}
+  \item Process(or I/O)
+  \begin{enumerate}
+    \item 3 button – Input, Output, Copy Code
+  \end{enumerate}
+\end{enumerate}
+\textit{}
+
+\subsection{Process Checking - Input \& Output}
+\begin{enumerate}
+  \item Description
+  \begin{itemize}
+    \item User can check whether code is what they wanted or not through manual checking process
+    \item Once user pushes input value into the program, they can see there is expected output or not.
+  \end{itemize}
+  \item Process(or I/O)
+  \begin{enumerate}
+    \item Input: Input value into program formed with selected code
+    \item Output: Print output from pushed input
+  \end{enumerate}
+\end{enumerate}
+\textit{}
+
+
+\subsection{Copy Code}
+
+\begin{enumerate}
+  \item Description
+  \begin{itemize}
+    \item Providing copy the whole code which is selected, easily
+  \end{itemize}
+  \item Process(or I/O)
+  \begin{enumerate}
+    \item Clicking copy button
+    \item Copy selected code on the clipboard
+  \end{enumerate}
+\end{enumerate}
+\textit{}
+
+
+
+\subsection{Cancellation(4) - Clicking Return Button}
+\begin{enumerate}
+  \item Description
+  \begin{itemize}
+    \item User can go back with clicking return button
+  \end{itemize}
+  \item Process(or I/O)
+  \begin{enumerate}
+    \item Clicking return button
+    \item Go back to the code selection window
+  \end{enumerate}
+\end{enumerate}
+\textit{}
+
+
+\subsection{Cancellation(4) - Cliking X Window Button}
+\begin{enumerate}
+  \item Description
+  \begin{itemize}
+    \item User can exit program
+  \end{itemize}
+  \item Process(or I/O)
+  \begin{enumerate}
+    \item Clicking X window button
+    \item Program closing
+  \end{enumerate}
+\end{enumerate}
+\textit{}
+
+
+
+
+
+
+% ''-------------end of the document-------------------''
+% % figure example --------------
+% \begin{figure}[h]
+% \centering
+% \includegraphics[width=0.5\textwidth]{./figures/UI_main.jpg}
+% %text slot
+% \caption{Example Example.}
+% \label{fig_sim}
+% \end{figure}
 
 % section specifications (end)
 % \begin{thebibliography}{1}
