@@ -52,7 +52,7 @@ def get_accepted(search_result):
 
 	return ids
 
-def get_code_segement(answer_id):
+def get_code_segment(answer_id):
 	'''code에 해당하는 부분만 추출하는 함수'''
 	page = requests.get('http://stackoverflow.com/a/' + str(answer_id)).text
 
@@ -60,11 +60,19 @@ def get_code_segement(answer_id):
 
 	div_id = 'answer-'+str(answer_id)
 	#div_id에서 code 부분을 return, 없으면 None 반환
-	return soup.find_all(id = div_id)[0].code.text 
+	codes = soup.find_all(id = div_id)[0].find_all('code')
+	if codes == None:
+		return codes
+	else:
+		return max([code.text for code in codes], key=len)
 
 
-example = search_query('quicksort','python')
 
+
+
+# example = search_query('quicksort','python')
+
+example = search_query('quicksort','c++')
 example_set = get_accepted(example)
 
-example_code = get_code_segement(example_set[0])
+example_code = get_code_segment(example_set[1])
