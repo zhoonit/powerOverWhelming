@@ -9,10 +9,9 @@ class CandidatesStack(Candidates):
 	'''
 	Stackover flow에서 question을 넣으면 answer set을 반환시킴
 	 '''
-
 	origin = 'STACK'
 
-	def __init__(self, query, tag = None):
+	def __init__(self, query, tag = None, *args, **kwargs):
 		data = CandidatesStack.search_query(query, tag)
 
 		self.question_set = CandidatesStack.get_accepted(data)
