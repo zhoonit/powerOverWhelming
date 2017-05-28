@@ -26,7 +26,6 @@ def clean(doc):
 
 
 doc_clean = [clean(doc).split() for doc in doc_complete]
-# 겐설치필요
 # Importing Gensimpip
 #import warnings
 #warnings.filterwarnings(action='ignore', category=UserWarning, module='gensim')
