@@ -749,8 +749,6 @@ Assignment Helper gives the code.
   \end{enumerate}
 \end{enumerate}
 
-
-
 \textit{}
 
 \subsection{Auto Compile Test - Edit Code Snippet}
@@ -941,19 +939,122 @@ Assignment Helper gives the code.
 
 \subsection{Overall architecture} % (fold)
 \label{sub:overall_architecture}
+
+see Figure~\ref{overall}
+
 % subsection overall_architecture (end)
 
 \subsection{Directory Organization} % (fold)
 \label{sub:directory_organization}
+
+\begin{table}[h]
+\renewcommand{\arraystretch}{1.3}
+\caption{Directory Organization}
+\label{table:directory_org}
+\centering
+\begin{adjustbox}{width=0.5\textwidth}
+\small
+\begin{tabular}{c||c||c}
+\hline
+\bfseries Directory & \bfseries File Names & \bfseries Module Names \\
+\hline\hline
+project/src/keyword/  & \parbox[t]{5cm}{synonym\_test.csv \\ keyword\_search.py \\ topic\_analysis.py} & \parbox[t]{5cm}{keyword\_search}\\
+\hline
+project/src/crawling/ & \parbox[t]{5cm}{crawling\_common.py \\ crawling\_stack.py \\ crawling\_google.py} & \parbox[t]{5cm}{get\_code}\\
+\hline
+project/src/comp\_exec/ &\parbox[t]{5cm}{error\_argument\_C++.py \\ execution\_C++.py \\ error\_argument\_py.py \\ execution\_py.py \\ ... } & \parbox[t]{5cm}{validation}\\
+\hline
+project/src/GUI/ & \parbox[t]{5cm}{search.py \\candidates.py \\ compiling.py \\ error.py \\ success.py} & \parbox[t]{5cm}{GUI}\\
+\hline
+
+\end{tabular}
+\end{adjustbox}
+\end{table}
+
 % subsection directory_organization (end)
+\textbf{Module Description}
 
-\subsection{class 1. Search Query Extraction} % (fold)
-\label{sub:search_query_extraction}
-% subsection search_query_extraction (end)
+\subsection{keyword - keyword\_search} % (fold)
+\label{sub:keyword_search}
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.5\textwidth]{./figures/keyword_search.png}
+%description of module get\_info
+\caption{Description of module \textit{keyword\_search}}
+\label{keyword_search}
+\end{figure}
 
-\subsection{Search Crawling} % (fold)
-\label{sub:search_crawling}
+
+This module is to take real language from user in sentence or words, split up, and replace them to keywords for search. Our program is to detect keywords from natural language, and make coded files for output. For that, a csv file for keywords is needed. If this list of keywords is too short, all it can make is an error sign. So, we first made 2000 words for key, and make it extend. What we need for search a word in some sentences is first, split function. By that, we can save our resources for replacement, reduce error cases, or decrease misunderstanding. Then it replaces natural language to limited number of keyword. Those keywords are sent to next stage. And it analyzes frequency, deviation, and tendency of keyword composition for later use. The synonym\_word.csv is for those keywords, but there will be needs of complement. So, with analysis of keywords, the csv file extends. 
+
+
+see Figure~\ref{keyword_search}
+% subsection keyword_search (end)
+
+\subsection{get\_code - Crawling and Selecting} % (fold)
+\label{sub:get_code}
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.5\textwidth]{./figures/get_info.png}
+%description of module get\_info
+\caption{Description of module \textit{get\_info}}
+\label{get_info}
+\end{figure}
+
+This module search for appropriate codes using keywords from the \textit{query} module.
+\textit{get\_code} imports \textit{requests} for query requesting to the server, mostly using REST API supported from forums.
+For raw html files, the module imports \textit{beautifulsoup4} package to parse the code.
+After crawling codes from sites, this module also evaluates the quality of the code.
+
+
+see Figure~\ref{get_info}
 % subsection search_crawling (end)
+
+\subsection{validation - Compling and Execution} % (fold)
+\label{sub:validation}
+
+\label{sub:validation}
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.5\textwidth]{./figures/comp_exec.png}
+%description of module get\_info
+\caption{Description of module \textit{validation}}
+\label{validation}
+\end{figure}
+This module is to take cpp file generated after parsing codes, then compile, and execute it.
+It imports \textit{subprocess}, which makes python freely handle other programming language.
+It creates command with Popen function in subprocess, and then executes it with communicate function in subprocess.
+It compiles test.cpp using g++ and executes it using "./test" command
+Error handling is made by error exception method. 
+At this point, it imports os, sys, and subprocess. 
+Each of these catches error which they can handle.
+The os uses errorno, strerror, and filename.
+The sys uses exc\_info() function, and the subprocess uses returncode and strip() function.
+Then Error\_Argument prints out error caused within os, sys, and process.
+
+see Figure~\ref{validation}
+% subsection validation (end)
+
+\subsection{GUI} % (fold)
+\label{sub:gui}
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.5\textwidth]{./figures/gui_overall.png}
+%description of module get\_info
+\caption{Description of module \textit{gui}}
+\label{gui}
+\end{figure}
+GUI consists of 5 windows corresponds to each procedure.
+Firstly, the \textit{main} window provides search.
+After clicking the search, the program executes \textit{keyword\_search} and then window moves to \textit{search\_result} window.
+\textit{search\_result} window has candidates from \textit{get\_info} module.
+
+Clicking \textit{compile} button on the  \textit{search\_result} window will execute compile.
+Compile is done by \textit{validation} module. After compiling, the program shows either \textit{success} or \textit{fail} window
+
+
+see Figure~\ref{gui}
+% subsection gui (end)
 
 
 % section architecture_design_and_implementation (end)
@@ -962,8 +1063,231 @@ Assignment Helper gives the code.
 \section{Use Case} % (fold)
 \label{sec:use_case}
 
+\subsection{install}
+This use case specifies the way user install the program
+
+\begin{itemize}
+  \item download the file from the link
+  \item auto extractor will unzip the program
+  \item show pragram installed finished display
+\end{itemize}
+\textit{}
+
+
+
+\subsection{first run the program}
+This use case presents how the program will act when the program is run very first time
+\begin{itemize}
+  \item initial running the program
+  \item show up the configuration window(conf.exe)
+  \item after configuration done, do the tutorial
+\end{itemize}
+\textit{}
+
+
+
+\subsection{do the tutorial}
+This use case specifies how the program will act when user do the tutorial
+\begin{itemize}
+  \item clicking the tutorial button on main window or initial setting 
+  \item play the tutorial movie(tut.mov)
+  \item after playing the tutorial, close the tut.mov
+\end{itemize}
+\textit{}
+
+
+
+\subsection{open configuration window}
+This use case specifies how the configuration window looks like when the user opens the configuration window
+\begin{itemize}
+  \item initial running the program or double clicking on conf.exe
+  \item open a checkbox gui
+  \item the checkbox gui has languages to be installed
+\end{itemize}
+\textit{}
+
+
+
+\subsection{check the languages and confirm installation}
+This use case specifies how the program should act in the configuration window. In the configuration window, the user can easily install language packs from server.
+\begin{itemize}
+  \item check language packs to install / uncheck languages to uninstall
+  \item click install button to install and uninstall selected ones
+\end{itemize}
+\textit{}
+
+
+
+\subsection{open readme}
+This use case describes about opening the readme file.
+\begin{itemize}
+  \item open a readme file which gives basic installation
+\end{itemize}
+\textit{}
+
+
+
+\subsection{run the program(main.exe)}
+This use case specifies of initializing the program when the user executes the program.
+\begin{itemize}
+  \item running the program
+  \item open the main window(search window)
+\end{itemize}
+\textit{}
+
+
+
+\subsection{tooltips}
+This use case specifies about how the user enables the tooltips
+\begin{itemize}
+  \item hanging mouse on the buttons for 3 seconds
+  \item show the tooltips
+  \item tooltip disappear 1 seconds after mouse hovering finished
+\end{itemize}
+\textit{}
+
+
+
+\subsection{view search history}
+This use case specifies about viewing search history. User can view the search history and replicates the search result using search history.
+\begin{itemize}
+  \item clicking search history button
+  \item show search history pane
+\end{itemize}
+\textit{}
+
+
+\subsection{enter a query}
+This use case sepecfies how users can search their questions. The users first select the language and then search on window
+\begin{itemize}
+  \item enter a query on the search window
+  \item while entering a query, keep run auto completion
+  \item show the auto completion result
+  \item select language to search
+  \item uninstalled languages are greyed out
+\end{itemize}
+\textit{}
+
+
+
+\subsection{submit the query}
+This use case specifies the procedures when submitting the query
+\begin{itemize}
+  \item click 'search' button
+  \item run, query extracting module
+  \item run, \textit{get\_code} module based on the result
+  \item show the candidates window
+\end{itemize}
+\textit{}
+
+
+\subsection{select code}
+This use case specifies about how user can interact with \textit{candidates} window. This is the main interaction with the program.
+\begin{itemize}
+  \item view each code to compile
+  \item the user evaluates codes
+  \item click code that the user things the best suitable.
+\end{itemize}
+\textit{}
+
+
+
+\subsection{modify code}
+This use case specifies about modifiying the code if the user wants to.
+\begin{itemize}
+  \item the user decide whether the codes needs to be refined
+  \item click on the code
+  \item editing the code
+  \item press enter to confirm
+\end{itemize}
+\textit{}
+
+
+
+\subsection{compile code}
+This use case specifies about compiling the code, when user clicks copile button.
+\begin{itemize}
+  \item after select and modify, user press compile button
+  \item validation module executes the compile process
+  \item show the result of compiling either \textit{success} or \textit{fail}
+\end{itemize}
+\textit{}
+
+
+
+\subsection{pop up fail window}
+This use case specifies when the compile fails, shows error result.
+\begin{itemize}
+  \item failure of the compiling triggers the fail window
+  \item show the fail window
+  \item fail window shows errors
+\end{itemize}
+\textit{}
+
+
+
+\subsection{pop up success window}
+This use case specifies when the compile succeed, shows copy code window.
+\begin{itemize}
+  \item pops up the window
+  \item the success window provides to test input and output
+  \item the success window also provides copying code
+\end{itemize}
+\textit{}
+
+
+
+\subsection{test input}
+This use case specifies about testing more input using \textit{validation} module.
+\begin{itemize}
+  \item put input on the input textbox
+  \item click on the test button
+  \item outcome will show the result with the program
+\end{itemize}
+\textit{}
+
+
+
+\subsection{copy code}
+This use case specifies when the user wants to save result, this provides the way to save the result.
+\begin{itemize}
+  \item press copy code button
+  \item code will be copied to the clipboard
+\end{itemize}
+\textit{}
+
+
+
+\subsection{click x button}
+This use case specifies how the program act when x buttons are clicked
+\begin{itemize}
+  \item click x button
+  \item pops prompt window that asks about the cancellation
+  \item cancel all procedure and go back to the first search window
+\end{itemize}
+\textit{}
+
+
+
+\subsection{program exit}
+This use case specifies how to close the program.
+\begin{itemize}
+  \item click x button on main(search) window
+  \item program terminates
+\end{itemize}
+\textit{}
+
+
+
 % section use_case (end)
 
+\begin{figure*}
+\centering
+\includegraphics[width=1\textwidth]{./figures/overall_arch.jpg}
+%description of module get\_info
+\caption{Description of Overall Architecture}
+\label{overall}
+\end{figure*}
 
 
 % ''-------------end of the document-------------------''
