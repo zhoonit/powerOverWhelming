@@ -9,13 +9,13 @@
 
         # GUI 틀 만들기 ~ 구산 due 6/2 완료
 
-        GUI 함수 바인딩 하는방법 숙지 ~ 구산 due 6/2 
+        # GUI 함수 바인딩 하는방법 숙지 ~ 구산 due 6/2 
 
         language patch ~ 재국 pending
 
-        crawling ~ 지훈 due 6/3
+        # crawling ~ 지훈 due 6/3
 
-        word 추출 ~ 지훈 due 6/4
+        word 추출 ~ 지훈 due 6/4 (가완성)
 
         tutorial ~ 구산 pending
 
@@ -46,14 +46,14 @@
 
     class 다큐멘테이션
 #title due 5/31
-    '구산 추가, 나머지 빼기'
+    # '구산 추가, 나머지 빼기'
 
-    '역할 - devloper -> 구산 / customer -> 지훈 / user -> 재국'
+    # '역할 - devloper -> 구산 / customer -> 지훈 / user -> 재국'
 
-    'assignment helper 이름 바꾸기'
+    # 'assignment helper 이름 바꾸기'
 
 #abstract due 5/31
-    'abstract 배경, 관련 기술 밑에 다 추가 - 지훈'
+    'abstract 배경, 관련 기술 밑에 다 추가 - 규호'
 
 #requirements due 6/4
     'II. requirements description 붙이기(최소 한문장) - 지훈'
@@ -61,24 +61,24 @@
     'specification 보고 requirements 수정 - 재국'
 
 #environment due 5/31
-    'PyQt4 -> 5, qt Designer 4.12 -> 5.90 - 지훈'
+    # 'PyQt4 -> 5, qt Designer 4.12 -> 5.90 - 지훈'
 
 #specification 6/4
-    'requirements 처럼 수정 - 지훈'
+    'requirements 처럼 수정(description 붙이기) - 규호'
 
-    'pseudo code L. - 산이'
+    'pseudo code L. - 규호'
 
     'pseudo code Q. - 지훈'
 
     'pseudo code R. S. T. - 지훈'
 
-    'specfication W. X 사이에 compile, fail 추가 + description까지'
+    'specfication W. X 사이에 compile, fail 추가 + description까지 - 재국'
 
 #overall architecture pending
-    'overall architecture description - 재국'
+    'overall architecture description - 규호'
 
 #design 
-    'GUI 부분 directory 수정 - 산이 due 5/31'
+    # 'GUI 부분 directory 수정 - 산이 due 5/31'
 
 	'class diagram    재국 due 6/4' 
 
@@ -88,9 +88,9 @@
     'use case format - 지훈 5/31'
 
     'use case contents - 구산 6/3'
-
+    
 #installation
-    'installation guide - 재국 pending'
+    'installation guide - 규호'
 #discussion
     PENDING
 
