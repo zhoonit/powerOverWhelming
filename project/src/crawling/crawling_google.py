@@ -91,5 +91,5 @@ class CandidatesGoogle(Candidates):
 
 
 
-example = CandidatesGoogle('quick sort', 'cpp')
+#example = CandidatesGoogle('quick sort', 'cpp')
 

@@ -29,7 +29,7 @@ class CandidatesStack(Candidates):
 
 		self.codes = Candidates.get_codes(code_set, code_type, STACK_ADDED_POINT, 'STACK')
 		
-		self.sort_code()
+		self.sort_codes()
 		
 		return None
 
@@ -47,6 +47,9 @@ class CandidatesStack(Candidates):
 		@tag : tag, 코드 타입을 반환
 		@return : query를 넣으면 반환되는 json object
 		'''
+		if tag == 'cpp':
+			tag = 'c++'
+
 		params = {
 			'site':'stackoverflow',
 			'order':'desc',
