@@ -1012,8 +1012,18 @@ see Figure~\ref{keyword_search}
 This module search for appropriate codes using keywords from the \textit{query} module.
 \textit{get\_code} imports \textit{requests} for query requesting to the server, mostly using REST API supported from forums.
 For raw html files, the module imports \textit{beautifulsoup4} package to parse the code.
-After crawling codes from sites, this module also evaluates the quality of the code.
 
+Secondly, search for codes in Google and retrieve result.
+To get proper result from Google, we spoofed request header to firefox 53.0
+For codes from Github, The program manipulates the source to get raw file.
+
+After crawling codes from sites, this module also evaluates the quality of the code.
+Codes are evaluated in three ways.
+Firtly, codes are evaluated with the common properties like lenght of the codes.
+Secondly, codes are evaluated with code specific properties. 
+For example, the program check number of imports when evaluating python code.
+Lastly, codes are evaluated with the origin, where the code came from.
+For example, codes are highly evaluated when connected with google.
 
 see Figure~\ref{get_info}
 % subsection search_crawling (end)
