@@ -1,9 +1,10 @@
 # import urllib.parse
 import json
 import bs4
-from crawling_common import Candidates
+from crawling_common import *
 
 URL_STACK = "http://api.stackexchange.com/2.2/"
+STACK_ADDED_POINT = -1
 
 class CandidatesStack(Candidates):
 	'''
@@ -11,14 +12,32 @@ class CandidatesStack(Candidates):
 	 '''
 	origin = 'STACK'
 
-	def __init__(self, query, tag = None, *args, **kwargs):
-		data = CandidatesStack.search_query(query, tag)
+	def __init__(self, query, code_type = None, *args, **kwargs):
+		'''
+		@code_type : CODE_TYPE[] 참조
+		'''
 
-		self.question_set = CandidatesStack.get_accepted(data)
-		self.code_set = [CandidatesStack.get_code_segment(question) for question
-							 in self.question_set]
-		self.relavent_code_set = self.code_set[0]
-		self.longest_code_set = max(self.code_set, key=len)
+		Candidates.__init__(self)
+
+		data = CandidatesStack.search_query(query, code_type)
+
+
+		question_set = CandidatesStack.get_accepted(data)
+
+		code_set = [CandidatesStack.get_code_segment(question)
+					for question in question_set if question is not None]
+
+		self.codes = Candidates.get_codes(code_set, code_type, STACK_ADDED_POINT, 'STACK')
+		
+		self.sort_code()
+		
+		return None
+
+		#deprecated
+		# self.question_set = CandidatesStack.get_accepted(data)
+		# self.code_set = [CandidatesStack.get_code_segment(question) for question in self.question_set]
+		# self.relavent_code_set = self.code_set[0]
+		# self.longest_code_set = max(self.code_set, key=len)
 
 	@staticmethod
 	def search_query(query,tag = None):
@@ -57,7 +76,8 @@ class CandidatesStack(Candidates):
 			except KeyError as e:
 				# print("accepted_answer_id가 없습니다.")
 				continue
-
+		if len(ids) == 0:
+			raise BaseException
 		return ids
 
 	@staticmethod
@@ -67,7 +87,7 @@ class CandidatesStack(Candidates):
 		@answer_id : stackoveflow answer_id
 		@return :  code에 해당하는 블럭중 가장 긴 블럭, 없을 경우 none 반환
 		'''
-		page = Candidates.get_request('http://stackoverflow.com/a/' + str(answer_id)).text
+		page = Candidates.get_request('http://stackoverflow.com/a/' + str(answer_id) ).text
 
 		soup = bs4.BeautifulSoup(page, 'html.parser')
 
@@ -78,8 +98,12 @@ class CandidatesStack(Candidates):
 		if codes == None:
 			return codes
 		else:
-			return max([code.text for code in codes], key=len)
+			try:
+				return max([code.text for code in codes], key=len)
+			except ValueError:
+				return None
 
 
-# example = search_query('quicksort','python')
 
+# example = CandidatesStack('quick sort')
+# example.Code

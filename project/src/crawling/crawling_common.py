@@ -1,5 +1,6 @@
 import requests
 import re
+from urllib.parse import quote 
 
 __author__ = 'Jee Hoon Lee'
 
@@ -11,7 +12,7 @@ class Code(object):
 
 	type = None #python or cpp or else
 
-	def __init__(self, content, added_point = None, origin = None, *args, **kwargs):
+	def __init__(self, content, added_point = 0, origin = None, *args, **kwargs):
 		'''
 		@DESC : 코드에 대한 컨텐츠, weight를 넣음.
 		@added_point : weight를 계산할때 code가 가지고 있는 내용의 적합도와 질을
@@ -30,7 +31,7 @@ class Code(object):
 			code specific
 		@return : weight 반환
 		'''
-		return len(self.content)
+		return len(self.content) + added_point
 
 	def calculate_type_bound_weight(self):
 		'''
@@ -43,14 +44,14 @@ class CodePython(Code):
 	''' Python Specific Code'''
 	type = CODE_TYPE['python']
 
-	def __init__(self, content, added_point, origin, *args, **kwargs):
+	def __init__(self, content, added_point, origin = None, *args, **kwargs):
 		Code.__init__(self, content, added_point, origin, kwargs)
 
 	def calculate_type_bound_weight(self):
 		'''
 		@DESC : python만의 weight를 계산함
 		'''
-		weight = -num_imports(self) * 10 #import의 개수가 많으면 적합도 떨어짐
+		weight = -self.num_imports() * 10 #import의 개수가 많으면 적합도 떨어짐
 
 		return weight
 
@@ -67,14 +68,14 @@ class CodeCPP(Code):
 	'''CPP Specific Code'''
 	type = CODE_TYPE['cpp']
 
-	def __init__(self, content, added_point, origin, *args, **kwargs):
+	def __init__(self, content, added_point, origin = None, *args, **kwargs):
 		Code.__init__(self, content, added_point, origin, kwargs)
 
 	def calculate_type_bound_weight(self):
 		'''
 		@DESC : cpp만의 weight를 계산함
 		'''
-		weight = -num_includes(self) * 10 #import의 개수가 많으면 적합도 떨어짐
+		weight = -self.num_includes() * 10 #import의 개수가 많으면 적합도 떨어짐
 
 		return weight
 
@@ -86,14 +87,15 @@ class CodeCPP(Code):
 
 
 class Candidates(object):
-	origin = None #stack or google
+	origin = None #stack or google or complex
 
 	def __init__(self, codes = None):
+		if codes is None:
+			codes = []
 		self.codes = codes #code 를 가지고 있는 list
-		self.a = a
-
+	
 	@staticmethod
-	def get_request(url_target,method = None, payload=None):
+	def get_request(url_target,method = '', payload=None):
 		'''
 		@DESC : REST API GET을 편하게 구현
 		@url_target : http//.../
@@ -102,21 +104,46 @@ class Candidates(object):
 
 		# params_encoded = urllib.parse.urlencode(params)
 
-		url_target = url_target + method
 		
-		data = requests.get(url_target, params = payload)
+		url_target = url_target + quote(method)
+
+		data = requests.get(url_target, params = payload, timeout = 5)
+	
 
 		return data
 
 	@staticmethod
-	def get_best_code(self):
+	def get_codes(contents, code_type, added_point = 0, origin = None):
 		'''
-		@DESC: code 적합도가 가장 높은 code를 return하는 함수
+		@DESC: type과 contents를 받아서 적절한 codes 뭉치를 반환시켜주는 함수
+		@contents : code 내용
+		@type : CODE_TYPE에 있는 code 종류
+		'''
+			
+		if code_type == CODE_TYPE['python']:
+			codes = [CodePython(i, added_point, origin) for i in contents if i is not None]
+		elif code_type == CODE_TYPE['cpp']:
+			codes = [CodeCPP(i, added_point, origin) for i in contents if i is not None]
+		else:
+			codes = [Code(i, added_point, origin) for i in contents if i is not None]
+
+		return codes
+	
+	def sort_codes(self):
+		'''
+		@DESC: code 적합도가 높은 순으로 code를 정렬 해주는 함수
 		@return: code 적합도가 가장 높은 code
 		'''
-		pass
+		self.codes.sort(key= lambda x: x.weight, reverse = True)
+		return None
 
 	def __add__(self, other):
-		return Candidates(self.codes + other.codes)
+		'''
+		@DESC : Candidates + Candidates 에 대한 정의
+		'''
+		new = Candidates(self.codes + other.codes)
+		new.sort_codes()
+		new.origin = 'COMPLEX'
+		return new
 
 
