@@ -74,8 +74,7 @@ San Gu\IEEEauthorrefmark{3} }
 \maketitle
 
 \begin{abstract}
-coding Helper is a program to help people who have difficulties with their programming language assignments. coding Helper will able to help the coding by crawling the data from webs such as programmer forums and then find similar questions and related codes. It will also have a verification function and will check the codes by using CRC or other compilers. It shall check it by testing the input, output and the expectation all together.
-
+Coding Helper is a program to help people who have difficulties with their programming language assignments.  It is designed to be easy to use for those who are new to programming and are looking for examples easily. This can also be helpful to programmers who are somewhat skilled in finding examples when creating new programs. Coding Helper receives inputs in natural language for those who are unfamiliar with programming. The user then chooses which programming language he wants as the result. This then finds the keyword in that natural language and finds the programming data corresponding to that keyword. It will able to help the assignment by crawling the data from webs such as programmer forums like "github" and then find similar questions and related codes. It will also have a verification function and will check the codes by using CRC or other compilers. It shall check it by testing the input, output and the expectation all together.
 \centering
 
 
@@ -981,6 +980,23 @@ project/src/GUI/ & \parbox[t]{5cm}{search.py \\candidates.py \\ compiling.py \\ 
 % subsection directory_organization (end)
 \textbf{Module Description}
 
+\subsection{overall architecture} % (fold)
+\label{sub:overall_architecture}
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.5\textwidth]{./figures/keyword_search.png}
+%description of module get\_info
+\caption{Description of module \textit{overall\_architecture}}
+\label{overall_architecture}
+\end{figure}
+
+
+There are 3 Modules in the program, which are keyword_search, get_info, and validation. In keyword_search module, the program takes user input, sentence or words. The program splits up input value, and finds out keyword for search. To do this, the csv file which contains keywords frequently used in programming is used. In get_info module, the program searches for codes in Google and Stack Overflow. This module uses REST API for query requesting to the server, and imports beautifulsoap4 for parsing the code. After crawling codes from websites. In validation module, the program converts code into program language file, then compiles the file, executes it, and detects error. This module uses subprocess, so all of these tasks are processed by user’s own terminal software.
+
+see Figure~\ref{overall_architecture}
+% subsection overall_architecture (end)
+
+
 \subsection{keyword - keyword\_search} % (fold)
 \label{sub:keyword_search}
 \begin{figure}[ht]
@@ -1122,12 +1138,15 @@ Entry Condition & \\
 \end{table}
 %
 
+\textbf{Installation and First Use}
+
 \subsubsection{install}
 This use case specifies the way user install the program
 
 \begin{itemize}
   \item download the file from the link
   \item auto extractor will unzip the program
+  \item displays the progress
   \item show pragram installed finished display
 \end{itemize}
 \textit{}
@@ -1195,7 +1214,6 @@ This use case specifies of initializing the program when the user executes the p
 \textit{}
 
 
-
 \subsubsection{tooltips}
 This use case specifies about how the user enables the tooltips
 \begin{itemize}
@@ -1204,6 +1222,9 @@ This use case specifies about how the user enables the tooltips
   \item tooltip disappear 1 seconds after mouse hovering finished
 \end{itemize}
 \textit{}
+
+
+\textbf{Search}
 
 \subsubsection{view search history}
 This use case specifies about viewing search history. User can view the search history and replicates the search result using search history.
@@ -1220,33 +1241,45 @@ This use case sepecfies how users can search their questions. The users first se
   \item enter a query on the search window
   \item while entering a query, keep run auto completion
   \item show the auto completion result
-  \item select language to search
+  \item select language to search : first set to C language
   \item uninstalled languages are greyed out
 \end{itemize}
 \textit{}
 
 
+\subsubsection{detect a keyword}
+This use case specifies how the program finds keyword from user input. The program suggests alternatives or synonyms for quality of the search.
+\begin{itemize}
+  \item click 'search' button
+  \item run, \textit{keyword\_search} module
+  \item the program look up the 'synonym_test.csv'
+  \item keyword_search module extracts keyword under the user input
+\end{itemize}
+\textit{}
+
 
 \subsubsection{submit the query}
 This use case specifies the procedures when submitting the query
 \begin{itemize}
-  \item click 'search' button
+  \item the program gets keyword
   \item run, query extracting module
   \item run, \textit{get\_code} module based on the result
+  \item get_code parses the code
   \item show the candidates window
 \end{itemize}
 \textit{}
 
+
+\textbf{Validation}
 
 \subsubsection{select code}
 This use case specifies about how user can interact with \textit{candidates} window. This is the main interaction with the program.
 \begin{itemize}
   \item view each code to compile
   \item the user evaluates codes
-  \item click code that the user things the best suitable.
+  \item click code that the user things the best suitable : first set to 1st radio button
 \end{itemize}
 \textit{}
-
 
 
 \subsubsection{modify code}
@@ -1265,9 +1298,9 @@ This use case specifies about compiling the code, when user clicks copile button
 \begin{itemize}
   \item after selecting and modifying, user press compile button
   \item program makes program file(test.py/cpp) with code
-  \item Validation executes compiler with subprocess
-  \item Validation makes execution file(test.out) if compiling succeeded
-  \item Validation runs execution file(test.out)
+  \item validation executes compiler with subprocess
+  \item validation makes execution file(test.out) if compiling succeeded
+  \item validation runs execution file(test.out)
   \item program prints out the output of code
   \item show the result of compiling either \textit{success} or \textit{fail}
 \end{itemize}
@@ -1279,9 +1312,9 @@ This use case specifies about compiling the code, when user clicks copile button
 This use case specifies the way program detect error and print it while compiling
 
 \begin{itemize}
-  \item Validation executes compiler with subprocess   
+  \item validation executes compiler with subprocess   
   \item when error occured, validation gets error code
-  \item Validation generates error message from error code
+  \item validation generates error message from error code
   \item program pints out the error message
 \end{itemize}
 \textit{}
@@ -1292,10 +1325,10 @@ This use case specifies the way program detect error and print it while compilin
 This use case specifies the way program supplement code when detected error can be fixed by itself
 
 \begin{itemize}
-  \item When error occured, validation gets error code
-  \item Validation generates error message from error code
+  \item when error occured, validation gets error code
+  \item validation generates error message from error code
   \item if error message is related with absence of some lines(ex.header), validation supplements code
-  \item Validation compiles supplemented code
+  \item validation compiles supplemented code
 \end{itemize}
 \textit{}
 
