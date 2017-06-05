@@ -15,15 +15,16 @@
 
         # crawling ~ 지훈 due 6/3
 
-        word 추출 ~ 지훈 due 6/4 (가완성)
+        # word 추출 ~ 규호 due 6/4
 
-        tutorial ~ 구산 pending
+        tutorial ~ 구산
 
     @통합 부분
         
         # git hub 구조 개편 ~ 지훈 due 5/31 완료
 
-        GUI에 통합 ~ 전체 6/4 모여서
+        # GUI에 통합 ~ 전체 6/4 모여서
+	   '''컴파일빼고
 
     
     
@@ -53,7 +54,7 @@
     # 'assignment helper 이름 바꾸기'
 
 #abstract due 5/31
-    'abstract 배경, 관련 기술 밑에 다 추가 - 규호'
+    # abstract 배경, 관련 기술 밑에 다 추가 - 규호'
 
 #requirements due 6/4
     'II. requirements description 붙이기(최소 한문장) - 지훈'
@@ -75,21 +76,23 @@
     'specfication W. X 사이에 compile, fail 추가 + description까지 - 재국'
 
 #overall architecture pending
-    'overall architecture description - 규호'
+    # 'overall architecture description - 규호'
 
 #design 
     # 'GUI 부분 directory 수정 - 산이 due 5/31'
 
-	'class diagram    재국 due 6/4' 
+	# 'class diagram    재국 due 6/4' 
 
-    'get_code description - 지훈 5/31' 
+   # 'get_code description - 지훈 5/31' 
 
 #use case 
-    'use case format - 지훈 5/31'
+    # 'use case format - 지훈 5/31'
 
     'use case contents - 구산 6/3'
     
 #installation
+    setting distribution method 
+    
     'installation guide - 규호'
 #discussion
     PENDING
