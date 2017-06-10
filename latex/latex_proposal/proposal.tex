@@ -1,11 +1,10 @@
 
-
 \documentclass[conference]{IEEEtran}
 
 \usepackage{adjustbox}
 \usepackage{graphicx}
 \usepackage{alphalph}
-
+\usepackage{lipsum}
 \let\OLDitemize\itemize
 \renewcommand\itemize{\OLDitemize\addtolength{\itemsep}{1em}}
 \let\OLDenumerate\enumerate
@@ -53,34 +52,35 @@
 % for over three affiliations, or if they all won't fit within the width
 % of the page, use this alternative format:
 % 
-% \author{\IEEEauthorblockN{Ji-hoon Lee\IEEEauthorrefmark{1},
-% Jae-gook Kim\IEEEauthorrefmark{2},
-% San Gu\IEEEauthorrefmark{3}, and
-% Kyo-ho Lee\IEEEauthorrefmark{4} }
-% \IEEEauthorblockA{\IEEEauthorrefmark{2}\IEEEauthorrefmark{3}\IEEEauthorrefmark{4}Department of Information System}
-% \IEEEauthorblockA{\IEEEauthorrefmark{1}Department of Finance, Business School}
-% \IEEEauthorblockA{Hanyang University, Seoul, Korea}
-% \IEEEauthorblockA{Email: \IEEEauthorrefmark{1}starypoc@hanyang.ac.kr,  \IEEEauthorrefmark{2}claretta@hanyang.ac.kr, \IEEEauthorrefmark{3}hyunsichang@hanyang.ac.kr, \IEEEauthorrefmark{4}1equal2@hanyang.ac.kr}}
-
 \author{\IEEEauthorblockN{Ji-hoon Lee\IEEEauthorrefmark{1},
-Jae-gook Kim\IEEEauthorrefmark{2}, and
-San Gu\IEEEauthorrefmark{3} }
+Jae-gook Kim\IEEEauthorrefmark{2},
+San Gu\IEEEauthorrefmark{3}, and
+Kyo-ho Lee\IEEEauthorrefmark{4} }
 \IEEEauthorblockA{\IEEEauthorrefmark{2}\IEEEauthorrefmark{3}\IEEEauthorrefmark{4}Department of Information System}
 \IEEEauthorblockA{\IEEEauthorrefmark{1}Department of Finance, Business School}
 \IEEEauthorblockA{Hanyang University, Seoul, Korea}
-\IEEEauthorblockA{Email: \IEEEauthorrefmark{1}starypoc@hanyang.ac.kr,  \IEEEauthorrefmark{2}claretta@hanyang.ac.kr, \IEEEauthorrefmark{3}hyunsichang@hanyang.ac.kr} }
+\IEEEauthorblockA{Email: \IEEEauthorrefmark{1}starypoc@hanyang.ac.kr,  \IEEEauthorrefmark{2}claretta@hanyang.ac.kr, \IEEEauthorrefmark{3}hyunsichang@hanyang.ac.kr, \IEEEauthorrefmark{4}1equal2@hanyang.ac.kr}}
+
+% \author{\IEEEauthorblockN{Ji-hoon Lee\IEEEauthorrefmark{1},
+% Jae-gook Kim\IEEEauthorrefmark{2}, and
+% San Gu\IEEEauthorrefmark{3} }
+% \IEEEauthorblockA{\IEEEauthorrefmark{2}\IEEEauthorrefmark{3}\IEEEauthorrefmark{4}Department of Information System}
+% \IEEEauthorblockA{\IEEEauthorrefmark{1}Department of Finance, Business School}
+% \IEEEauthorblockA{Hanyang University, Seoul, Korea}
+% \IEEEauthorblockA{Email: \IEEEauthorrefmark{1}starypoc@hanyang.ac.kr,  \IEEEauthorrefmark{2}claretta@hanyang.ac.kr, \IEEEauthorrefmark{3}hyunsichang@hanyang.ac.kr} }
 
 
 
 \maketitle
 
+\tableofcontents
+
 \begin{abstract}
-coding Helper is a program to help people who have difficulties with their programming language assignments. coding Helper will able to help the coding by crawling the data from webs such as programmer forums and then find similar questions and related codes. It will also have a verification function and will check the codes by using CRC or other compilers. It shall check it by testing the input, output and the expectation all together.
-
-\centering
+Coding Helper is a program to help people who have difficulties with their programming language assignments.  It is designed to be easy to use for those who are new to programming and are looking for examples easily. This can also be helpful to programmers who are somewhat skilled in finding examples when creating new programs. Coding Helper receives inputs in natural language for those who are unfamiliar with programming. The user then chooses which programming language he wants as the result. This then finds the keyword in that natural language and finds the programming data corresponding to that keyword. It will able to help the assignment by crawling the data from webs such as programmer forums like "github" and then find similar questions and related codes. It will also have a verification function and will check the codes by using CRC or other compilers. It shall check it by testing the input, output and the expectation all together.
 
 
-\begin{table}[h]
+
+\begin{table}[ht]
 \renewcommand{\arraystretch}{1.3}
 \caption{Role Assignment}
 \label{table_role}
@@ -91,14 +91,14 @@ coding Helper is a program to help people who have difficulties with their progr
 \hline
 \bfseries Role & \bfseries Name & \bfseries Task Description \\
 \hline\hline
-Developer & Gu San & \parbox[t]{5cm}{Managing whole process of developing\\ the program. }\\
+Developer Manager & Gu San & \parbox[t]{5cm}{Managing whole process of developing\\ the program. }\\
 \hline
 Users & Lee Ji-hoon & \parbox[t]{5cm}{Seeking for the usefulness compare\\ to other similar programs.}\\
 \hline
 Cutomers & Kim Jae-kook & \parbox[t]{5cm}{Finding out whether the project is \\ valuable.}\\
 \hline
-% Developer & Lee Kyu-ho & \parbox[t]{5cm}{Implementing the program.}\\
-% \hline
+Developer & Lee Kyu-ho & \parbox[t]{5cm}{Implementing the program.}\\
+\hline
 
 \end{tabular}
 \end{adjustbox}
@@ -155,12 +155,10 @@ There are numerous codes that are floating on the internet. But it is not verifi
 \label{sec:requirements}
 
 
-\textit{\textbf{Frontend Related}}
-
-\subsection{Building installation Manual}
+\subsection{Building Installation Manual}
 \textit{ }
 
-\subsection{Building Web-like Client}
+\subsection{Building Portable Client}
 \textit{ }
 
 \subsection{Instruction for Users}
@@ -170,6 +168,13 @@ There are numerous codes that are floating on the internet. But it is not verifi
 \textit{ }
 
 \subsection{Building Search and Select UI}
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut
+purus elit, vestibulum ut, placerat ac, adipiscing vitae, felis.
+Curabitur dictum gravida mauris. Nam arcu libero, nonummy
+eget, consectetuer i 
+
+  \textit{Details are as follows:}
+
 \begin{itemize}
   \item Textbox for a query
   \item Cardbox to code select and check
@@ -187,6 +192,9 @@ There are numerous codes that are floating on the internet. But it is not verifi
 \end{itemize}
 \textit{ }
 
+
+\cmt{kyoho working on above}
+
 \subsection{Checking Code Validity}
 \begin{itemize}
   \item Let users know the validity of the codes
@@ -198,10 +206,6 @@ There are numerous codes that are floating on the internet. But it is not verifi
   \item Prevent from user clicking the button twice
   \item Immediate response to button can make system overload
 \end{itemize}
-\textit{ }
-
-
-\textit{\textbf{Backend Related}}
 \textit{ }
 
 
@@ -219,12 +223,14 @@ There are numerous codes that are floating on the internet. But it is not verifi
 \end{itemize}
 \textit{ }
 
+\cmt{search history, search option, search auto completion 추가}
 \subsection{Learning System for Maximizing Accuracy}
 \begin{itemize}
   \item Collect data from user and get feedback from them
 \end{itemize}
 \textit{ }
 
+\cmt{fix everthing underneath}
 \subsection{Crawling and Parsing}
 \begin{itemize}
   \item Crawling data from website like programmer forum
@@ -293,9 +299,9 @@ There are numerous codes that are floating on the internet. But it is not verifi
 
 
 \section{SPECIFICATIONS} % (fold)
-\label{sec:specifications}
+\label{sec:specificatisons}
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \centering
 \includegraphics[width=0.5\textwidth]{./figures/Process_Flow.png}
 Our targeted users do not know how to code.
@@ -446,12 +452,12 @@ Coding Helper gives the code.
 \textit{}
 
 
-%프롬프트
+%
 \textbf{Process 1. Searching}
 
 
 \textit{}
-\begin{figure}[h]
+\begin{figure}[ht]
 \centering
 \includegraphics[width=0.5\textwidth]{./figures/UI_main.jpg}
 %text slot
@@ -474,7 +480,7 @@ Coding Helper gives the code.
 \end{enumerate}
 \textit{}
 
-\subsection{Search – History}
+\subsection{Search History}
 \begin{enumerate}
 \item Description
 \begin{itemize}
@@ -487,7 +493,7 @@ Coding Helper gives the code.
 \end{enumerate}
 \textit{}
 
-\subsection{Search – Option}
+\subsection{Search - Option}
 \begin{enumerate}
 \item Description
 \begin{itemize}
@@ -508,11 +514,11 @@ Coding Helper gives the code.
 \end{enumerate}
 \textit{}
 
-\subsection{Search – Auto Completion}
+\subsection{Search - Auto Completion}
 \begin{enumerate}
 \item Description
 \begin{itemize}
-  \item Show match from search ketwords.csv
+  \item Show match from search keywords.csv
 \end{itemize}
 \item Process(or I/O)
   \begin{enumerate}
@@ -583,7 +589,7 @@ Coding Helper gives the code.
 \end{enumerate}
 \textit{}
 
-\subsection{Request Submission – Extracting Keyword}
+\subsection{Request Submission - Extracting Keyword}
 \begin{enumerate}
 \item Description
 \begin{itemize}
@@ -665,7 +671,7 @@ Coding Helper gives the code.
 
 
 \textit{}
-\begin{figure}[h]
+\begin{figure}[ht]
 \centering
 \includegraphics[width=0.5\textwidth]{./figures/UI_code_select.jpg}
 %text slot
@@ -690,91 +696,6 @@ Coding Helper gives the code.
 
 
 \textit{}
-
-\subsection{Auto Compile Test - Requesting}
-
-\begin{enumerate}
-  \item Description
-  \begin{itemize}
-    \item Right after user selects code, program is compiling the code(See Figure~\ref{fig_concept_code_compile} )
-  \end{itemize}
-  \item Process(or I/O)
-  \begin{enumerate}
-    \item Input : Text that user chose
-    \item Output: Test. Program format
-  \end{enumerate}
-\end{enumerate}
-
-\textit{}
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.5\textwidth]{./figures/UI_code_validation.jpg}
-%text slot
-\caption{Concept Image of Code Compiling}
-\label{fig_concept_code_compile}
-\end{figure}
-
-\textit{}
-
-\subsection{Auto Compile Test - Success}
-
-\begin{enumerate}
-  \item Description
-  \begin{itemize}
-    \item If compiling is finished successfully, without error code, code box goes green
-  \end{itemize}
-  \item Process(or I/O)
-  \begin{enumerate}
-    \item Waiting for finish of compiling
-    \item Check whether error code exists or not (No error code = Success)
-  \end{enumerate}
-\end{enumerate}
-
-\textit{}
-
-\subsection{Auto Compile Test - Failure}
-
-\textit{}
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.5\textwidth]{./figures/UI_code_validation_fail.jpg}
-%text slot
-\caption{Concept Image of Code Testing Failure}
-\label{fig_concept_fail}
-\end{figure}
-
-
-\begin{enumerate}
-  \item Description
-  \begin{itemize}
-    \item If there is error code after compiling, program shows the error code to user (see Figure~\ref{fig_concept_fail})
-  \end{itemize}
-  \item Process(or I/O)
-  \begin{enumerate}
-    \item Waiting for finish of compiling
-    \item Show error code result to user
-    \item Enable users to edit codes if they can find the error.
-  \end{enumerate}
-\end{enumerate}
-
-\textit{}
-
-\subsection{Auto Compile Test - Edit Code Snippet}
-\begin{enumerate}
-  \item Description
-  \begin{itemize}
-    \item When the auto compile test ended with error, users are able to edit code manually
-  \end{itemize}
-  \item Process(or I/O)
-  \begin{enumerate}
-    \item Input: Error signal from auto compile test
-    \item Output: Enabling users to edit code
-  \end{enumerate}
-\end{enumerate}
-
-
-\textit{}
-
 
 \subsection{Cancellation(2) - Clicking Return Button}
 \begin{enumerate}
@@ -858,7 +779,7 @@ Coding Helper gives the code.
 
 
 \textit{}
-\begin{figure}[h]
+\begin{figure}[ht]
 \centering
 \includegraphics[width=0.5\textwidth]{./figures/UI_code_validation_fail.jpg}  
 %text slot
@@ -871,29 +792,97 @@ Coding Helper gives the code.
 \begin{enumerate}
   \item Description
   \begin{itemize}
-    \item Showing result and providing process check and copy function to user (see Figure~\ref{fig_concept_validation_manual}.
+    \item Showing result and providing process check and copy function to user (see Figure~\ref{fig_concept_validation_manual}).
   \end{itemize}
   \item Process(or I/O)
   \begin{enumerate}
-    \item 3 button – Input, Output, Copy Code
+    \item 3 button - Input, Output, Copy Code
   \end{enumerate}
 \end{enumerate}
 \textit{}
 
-\subsection{Process Checking - Input \& Output}
+\subsection{Auto Compile Test - Requesting}
+
 \begin{enumerate}
   \item Description
   \begin{itemize}
-    \item User can check whether code is what they wanted or not through manual checking process
-    \item Once user pushes input value into the program, they can see there is expected output or not.
+    \item Right after user selects code, program is compiling the code(See Figure~\ref{fig_concept_code_compile} )
   \end{itemize}
   \item Process(or I/O)
   \begin{enumerate}
-    \item Input: Input value into program formed with selected code
-    \item Output: Print output from pushed input
+    \item Input : Text that user chose
+    \item Output: Test. Program format
   \end{enumerate}
 \end{enumerate}
+
 \textit{}
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.5\textwidth]{./figures/UI_code_validation.jpg}
+%text slot
+\caption{Concept Image of Code Compiling}
+\label{fig_concept_code_compile}
+\end{figure}
+
+\textit{}
+
+\cmt{Auto Compile Test - Validation} 
+
+\subsection{Auto Compile Test - Success}
+
+\begin{enumerate}
+  \item Description
+  \begin{itemize}
+    \item If compiling is finished successfully, without error code, code box goes green
+  \end{itemize}
+  \item Process(or I/O)
+  \begin{enumerate}
+    \item Waiting for finish of compiling
+    \item Check whether error code exists or not (No error code = Success)
+  \end{enumerate}
+\end{enumerate}
+
+\textit{}
+
+\subsection{Auto Compile Test - Failure}
+
+\textit{}
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.5\textwidth]{./figures/UI_code_validation_fail.jpg}
+%text slot
+\caption{Concept Image of Code Testing Failure}
+\label{fig_concept_fail}
+\end{figure}
+
+
+\begin{enumerate}
+  \item Description
+  \begin{itemize}
+    \item If there is error code after compiling, program shows the error code to user (see Figure~\ref{fig_concept_fail})
+  \end{itemize}
+  \item Process(or I/O)
+  \begin{enumerate}
+    \item Waiting for finish of compiling
+    \item Show error code result to user
+    \item Enable users to edit codes if they can find the error.
+  \end{enumerate}
+\end{enumerate}
+
+\textit{}
+
+\subsection{Auto Compile Test - Edit Code Snippet}
+\begin{enumerate}
+  \item Description
+  \begin{itemize}
+    \item When the auto compile test ended with error, users are able to edit code manually
+  \end{itemize}
+  \item Process(or I/O)
+  \begin{enumerate}
+    \item Input: Error signal from auto compile test
+    \item Output: Enabling users to edit code
+  \end{enumerate}
+\end{enumerate}
 
 
 \subsection{Copy Code}
@@ -948,6 +937,8 @@ Coding Helper gives the code.
 \subsection{Overall architecture} % (fold)
 \label{sub:overall_architecture}
 
+There are 3 Modules in the program, which are keyword\_search, get\_info, and validation. In keyword\_search module, the program takes user input, sentence or words. The program splits up input value, and finds out keyword for search. To do this, the csv file which contains keywords frequently used in programming is used. In get\_info module, the program searches for codes in Google and Stack Overflow. This module uses REST API for query requesting to the server, and imports beautifulsoap4 for parsing the code. After crawling codes from websites. In validation module, the program converts code into program language file, then compiles the file, executes it, and detects error. This module uses subprocess, so all of these tasks are processed by users own terminal software.
+
 see Figure~\ref{overall}
 
 % subsection overall_architecture (end)
@@ -955,7 +946,7 @@ see Figure~\ref{overall}
 \subsection{Directory Organization} % (fold)
 \label{sub:directory_organization}
 
-\begin{table}[h]
+\begin{table}[ht]
 \renewcommand{\arraystretch}{1.3}
 \caption{Directory Organization}
 \label{table:directory_org}
@@ -968,7 +959,7 @@ see Figure~\ref{overall}
 \hline\hline
 project/src/keyword/  & \parbox[t]{5cm}{synonym\_test.csv \\ keyword\_search.py \\ topic\_analysis.py} & \parbox[t]{5cm}{keyword\_search}\\
 \hline
-project/src/crawling/ & \parbox[t]{5cm}{crawling\_common.py \\ crawling\_stack.py \\ crawling\_google.py} & \parbox[t]{5cm}{get\_code}\\
+project/src/crawling/ & \parbox[t]{5cm}{crawling\_common.py \\ crawling\_stack.py \\ crawling\_google.py \\ crawling\_controller.py} & \parbox[t]{5cm}{get\_code}\\
 \hline
 project/src/comp\_exec/ &\parbox[t]{5cm}{error\_argument\_C++.py \\ execution\_C++.py \\ error\_argument\_py.py \\ execution\_py.py \\ ... } & \parbox[t]{5cm}{validation}\\
 \hline
@@ -1031,7 +1022,6 @@ see Figure~\ref{get_info}
 \subsection{validation - Compling and Execution} % (fold)
 \label{sub:validation}
 
-\label{sub:validation}
 \begin{figure}[ht]
 \centering
 \includegraphics[width=0.5\textwidth]{./figures/comp_exec.png}
@@ -1081,39 +1071,49 @@ see Figure~\ref{gui}
 \section{Use Case} % (fold)
 \label{sec:use_case}
 
-\cmt{insert use case overview figure}
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.5\textwidth]{./figures/use_case_overall.jpg}
+%text slot
+\caption{Overall Picture of Usecase}
+\label{fig:usecase}
+\end{figure}
+This section illustrates whole usecase. User will use Coding Helper in pretty linear way. Firstly, for the first time of meeting the program.
+The user will guided to install and learn the program.
+After installing and learning, users will be able to access search and validate to easily find the codes from questions.
 
-
-\cmt{overview 예시 시작}
-
-
+Figure~\ref{fig:usecase}. shows overall usecase.  
 
 \subsection{Installation and First Use}
-%table 예시
 \begin{table}[ht]
-\renewcommand{\arraystretch}{1.3}
+\renewcommand{\arraystretch}{1}
 \caption{Installation and First Use}
 \label{table:usecase1}
 \centering
-\begin{adjustbox}{width=0.5\textwidth}
+\begin{adjustbox}{width=0.4 \textwidth}
 \small
 \begin{tabular}{c|c}
 \hline
-\multicolumn{2}{c}{Use Case Over View} \\
+\multicolumn{2}{c}{\textbf{Use Case Over View}} \\
 \hline
-Name of Use Case & Installation and First Use \\
+\textbf{Name of Use Case} & Installation and Initiation \\
 \hline
-Actor & User \\
+\textbf{Actor} & User \\
 \hline
-Entry Condition & \\
+\textbf{Entry Condition} & First Download\\
 \hline
-\multicolumn{2}{c}{Flow of Events}\\
+\multicolumn{2}{c}{\textbf{Flow of Events}}\\
 \hline
 \multicolumn{2}{c}{
 \parbox[t]{5cm}{
-  1. hi \\
-  2. by \\
-  3. third \\
+  1. install \\
+  2. first run the program \\
+  3. do the tutorial \\
+  4. open configuration window \\
+  5. select languages and confirm installation \\
+  6. open readme \\
+  7. run the program(main.exe) \\
+  +. tooltips
   }
 }\\
 \hline
@@ -1123,19 +1123,20 @@ Entry Condition & \\
 \end{table}
 %
 
-\subsubsection{install}
+\subsubsection{Install}
 This use case specifies the way user install the program
 
 \begin{itemize}
   \item download the file from the link
   \item auto extractor will unzip the program
+  \item displays the progress
   \item show pragram installed finished display
 \end{itemize}
 \textit{}
 
 
 
-\subsubsection{first run the program}
+\subsubsection{First Run The Program}
 This use case presents how the program will act when the program is run very first time
 \begin{itemize}
   \item initial running the program
@@ -1146,7 +1147,7 @@ This use case presents how the program will act when the program is run very fir
 
 
 
-\subsubsection{do the tutorial}
+\subsubsection{Do The Tutorial}
 This use case specifies how the program will act when user do the tutorial
 \begin{itemize}
   \item clicking the tutorial button on main window or initial setting 
@@ -1157,7 +1158,7 @@ This use case specifies how the program will act when user do the tutorial
 
 
 
-\subsubsection{open configuration window}
+\subsubsection{Open Configuration Window}
 This use case specifies how the configuration window looks like when the user opens the configuration window
 \begin{itemize}
   \item initial running the program or double clicking on conf.exe
@@ -1168,7 +1169,7 @@ This use case specifies how the configuration window looks like when the user op
 
 
 
-\subsubsection{check the languages and confirm installation}
+\subsubsection{Select Languages And Confirm Installation}
 This use case specifies how the program should act in the configuration window. In the configuration window, the user can easily install language packs from server.
 \begin{itemize}
   \item check language packs to install / uncheck languages to uninstall
@@ -1178,16 +1179,14 @@ This use case specifies how the program should act in the configuration window. 
 
 
 
-\subsubsection{open readme}
+\subsubsection{Open Readme}
 This use case describes about opening the readme file.
 \begin{itemize}
   \item open a readme file which gives basic installation
 \end{itemize}
 \textit{}
 
-
-
-\subsubsection{run the program(main.exe)}
+\subsubsection{Run The Program(main.exe)}
 This use case specifies of initializing the program when the user executes the program.
 \begin{itemize}
   \item running the program
@@ -1196,8 +1195,7 @@ This use case specifies of initializing the program when the user executes the p
 \textit{}
 
 
-
-\subsubsection{tooltips}
+\subsubsection{Tooltips}
 This use case specifies about how the user enables the tooltips
 \begin{itemize}
   \item hanging mouse on the buttons for 3 seconds
@@ -1206,51 +1204,133 @@ This use case specifies about how the user enables the tooltips
 \end{itemize}
 \textit{}
 
-\subsubsection{view search history}
+\subsection{Search}
+
+\begin{table}[hbt]
+\renewcommand{\arraystretch}{1}
+\caption{Search the query}
+\label{table:usecase2}
+\centering
+\begin{adjustbox}{width=0.4\textwidth}
+\small
+\begin{tabular}{c|c}
+\hline
+\multicolumn{2}{c}{\textbf{Use Case Over View}} \\
+\hline
+\textbf{Name of Use Case} & Installation and Initiation \\
+\hline
+\textbf{Actor} & User \\
+\hline
+\textbf{Entry Condition} & Run the Program\\
+\hline
+\multicolumn{2}{c}{\textbf{Flow of Events}}\\
+\hline
+\multicolumn{2}{c}{
+\parbox[t]{5cm}{
+  1. view search history \\
+  2. enter a query \\
+  3. search auto completion \\
+  4. submit the query
+  }
+}\\
+\hline
+
+\end{tabular}
+\end{adjustbox}
+\end{table}
+
+
+\subsubsection{View Search History}
 This use case specifies about viewing search history. User can view the search history and replicates the search result using search history.
 \begin{itemize}
   \item clicking search history button
   \item show search history pane
 \end{itemize}
 \textit{}
-
-
-\subsubsection{enter a query}
 This use case sepecfies how users can search their questions. The users first select the language and then search on window
 \begin{itemize}
   \item enter a query on the search window
   \item while entering a query, keep run auto completion
   \item show the auto completion result
-  \item select language to search
+  \item select language to search : first set to C language
   \item uninstalled languages are greyed out
 \end{itemize}
 \textit{}
 
 
-
-\subsubsection{submit the query}
-This use case specifies the procedures when submitting the query
+\subsubsection{Search Auto Completion}
+This use case specifies how the program finds search from user input. The program suggests alternatives or synonyms for quality of the search.
 \begin{itemize}
   \item click 'search' button
+  \item run, \textit{keyword\_search} module
+  \item the program look up the `synonym\_test.csv'
+  \item keyword\_search module extracts keyword under the user input
+\end{itemize}
+\textit{}
+
+\subsubsection{Submit The Query}
+This use case specifies the procedures when submitting the query
+\begin{itemize}
+  \item the program gets keyword
   \item run, query extracting module
   \item run, \textit{get\_code} module based on the result
+  \item get\_code parses the code
   \item show the candidates window
 \end{itemize}
 \textit{}
 
+\subsection{Validation}
 
-\subsubsection{select code}
+\begin{table}[hbt]
+\renewcommand{\arraystretch}{1}
+\caption{Validation}
+\label{table:usecase3}
+\centering
+\begin{adjustbox}{width=0.4\textwidth}
+\small
+\begin{tabular}{c|c}
+\hline
+\multicolumn{2}{c}{\textbf{Use Case Over View}} \\
+\hline
+\textbf{Name of Use Case} & Validation \\
+\hline
+\textbf{Actor} & User \\
+\hline
+\textbf{Entry Condition} & Select Code\\
+\hline
+\multicolumn{2}{c}{\textbf{Flow of Events}}\\
+\hline
+\multicolumn{2}{c}{
+\parbox[t]{5cm}{
+  1. select code \\
+  2. modify code \\
+  3. compile code \\
+  4. detect error \\
+  5. Supplement code \\
+  6. Pop up fail window \\
+  7. Pop up success window \\
+  8. Copy code
+  }
+}\\
+\hline
+
+\end{tabular}
+\end{adjustbox}
+\end{table}
+
+
+
+\subsubsection{Select Code}
 This use case specifies about how user can interact with \textit{candidates} window. This is the main interaction with the program.
 \begin{itemize}
   \item view each code to compile
   \item the user evaluates codes
-  \item click code that the user things the best suitable.
+  \item click code that the user things the best suitable : first set to 1st radio button
 \end{itemize}
 \textit{}
 
 
-
-\subsubsection{modify code}
+\subsubsection{Modify Code}
 This use case specifies about modifiying the code if the user wants to.
 \begin{itemize}
   \item the user decide whether the codes needs to be refined
@@ -1261,18 +1341,47 @@ This use case specifies about modifiying the code if the user wants to.
 \textit{}
 
 
-\subsubsection{compile code}
+\subsubsection{Compile Code}
 This use case specifies about compiling the code, when user clicks copile button.
 \begin{itemize}
-  \item after select and modify, user press compile button
-  \item validation module executes the compile process
+  \item after selecting and modifying, user press compile button
+  \item program makes program file(test.py/cpp) with code
+  \item validation executes compiler with subprocess
+  \item validation makes execution file(test.out) if compiling succeeded
+  \item validation runs execution file(test.out)
+  \item program prints out the output of code
   \item show the result of compiling either \textit{success} or \textit{fail}
 \end{itemize}
 \textit{}
 
 
 
-\subsubsection{pop up fail window}
+\subsubsection{Detect Error}
+This use case specifies the way program detect error and print it while compiling
+
+\begin{itemize}
+  \item validation executes compiler with subprocess   
+  \item when error occured, validation gets error code
+  \item validation generates error message from error code
+  \item program pints out the error message
+\end{itemize}
+\textit{}
+
+
+
+\subsubsection{Supplement Code}
+This use case specifies the way program supplement code when detected error can be fixed by itself
+\begin{itemize}
+  \item when error occured, validation gets error code
+  \item validation generates error message from error code
+  \item if error message is related with absence of some lines(ex.header), validation supplements code
+  \item validation compiles supplemented code
+\end{itemize}
+\textit{}
+
+
+
+\subsubsection{Pop Up Fail Window}
 This use case specifies when the compile fails, shows error result.
 \begin{itemize}
   \item failure of the compiling triggers the fail window
@@ -1283,29 +1392,16 @@ This use case specifies when the compile fails, shows error result.
 
 
 
-\subsubsection{pop up success window}
+\subsubsection{Pop Up Success Window}
 This use case specifies when the compile succeed, shows copy code window.
 \begin{itemize}
   \item pops up the window
-  \item the success window provides to test input and output
+  \item the success window provides to show the resulting cod
   \item the success window also provides copying code
 \end{itemize}
 \textit{}
 
-
-
-\subsubsection{test input}
-This use case specifies about testing more input using \textit{validation} module.
-\begin{itemize}
-  \item put input on the input textbox
-  \item click on the test button
-  \item outcome will show the result with the program
-\end{itemize}
-\textit{}
-
-
-
-\subsubsection{copy code}
+\subsubsection{Copy Code}
 This use case specifies when the user wants to save result, this provides the way to save the result.
 \begin{itemize}
   \item press copy code button
@@ -1314,8 +1410,42 @@ This use case specifies when the user wants to save result, this provides the wa
 \textit{}
 
 
+\subsection{Shutdown}
 
-\subsubsection{click x button}
+\begin{table}[hbt]
+\renewcommand{\arraystretch}{1}
+\caption{Shutdown}
+\label{table:usecase4}
+\centering
+\begin{adjustbox}{width=0.4\textwidth}
+\small
+\begin{tabular}{c|c}
+\hline
+\multicolumn{2}{c}{\textbf{Use Case Over View}} \\
+\hline
+\textbf{Name of Use Case} & Shutdown\\
+\hline
+\textbf{Actor} & User \\
+\hline
+\textbf{Entry Condition} & \\
+\hline
+\multicolumn{2}{c}{\textbf{Flow of Events}}\\
+\hline
+\multicolumn{2}{c}{
+\parbox[t]{5cm}{
+  1. Tooltips \\
+  2. Click X Button \\
+  3. Program Exit
+  }
+}\\
+\hline
+
+\end{tabular}
+\end{adjustbox}
+\end{table}
+
+
+\subsubsection{Click X Button}
 This use case specifies how the program act when x buttons are clicked
 \begin{itemize}
   \item click x button
@@ -1324,9 +1454,14 @@ This use case specifies how the program act when x buttons are clicked
 \end{itemize}
 \textit{}
 
+\subsubsection{Program Abort}
+This use case specifies how the program closes when user aborted the program.
+\begin{itemize}
+  \item program terminated with unexpected event
+  \item program terminates with default cleanup process
+\end{itemize}
 
-
-\subsubsection{program exit}
+\subsubsection{Program Exit}
 This use case specifies how to close the program.
 \begin{itemize}
   \item click x button on main(search) window
@@ -1349,7 +1484,7 @@ This use case specifies how to close the program.
 
 % ''-------------end of the document-------------------''
 % % figure example --------------
-% \begin{figure}[h]
+% \begin{figure}[ht]
 % \centering
 % \includegraphics[width=0.5\textwidth]{./figures/UI_main.jpg}
 % %text slot
@@ -1371,5 +1506,3 @@ This use case specifies how to close the program.
 
 % that's all folks
 \end{document}
-
-
