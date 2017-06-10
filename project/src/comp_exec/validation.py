@@ -104,7 +104,6 @@ def test():
 
 def validation(code_string, code_ext):
 	save_file = str_to_temp(code_string, code_ext)
-
 	return get_compile_result(save_file, code_ext)	
 	
 	

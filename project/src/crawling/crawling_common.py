@@ -106,9 +106,10 @@ class Candidates(object):
 
 		
 		url_target = url_target + quote(method)
-
-		data = requests.get(url_target, params = payload, timeout = 5)
-	
+		try:
+			data = requests.get(url_target, params = payload, timeout = 5)
+		except:
+			raise BaseException
 
 		return data
 

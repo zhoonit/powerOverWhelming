@@ -23,7 +23,6 @@ class CandidatesStack(Candidates):
 
 
 		question_set = CandidatesStack.get_accepted(data)
-
 		code_set = [CandidatesStack.get_code_segment(question)
 					for question in question_set if question is not None]
 

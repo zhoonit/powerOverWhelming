@@ -1,3 +1,7 @@
+import sys
+
+sys.path.insert(0, 'c:/cGit/project/src/comp_exec')
+import validation
 from crawling_common import *
 from crawling_stack import *
 from crawling_google import *
@@ -13,3 +17,6 @@ def search(query, type = ''):
 	results = stack + google
 
 	return [i.content for i in results.codes]
+
+# if __name__ == '__main__':
+# 	search('quick sort', 'python')
