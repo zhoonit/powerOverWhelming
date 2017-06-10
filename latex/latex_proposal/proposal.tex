@@ -156,54 +156,212 @@ There are numerous codes that are floating on the internet. But it is not verifi
 
 
 \textit{\textbf{Frontend Related}}
+\textit{ }
 
 \subsection{Building installation Manual}
-\textit{ }
+ The program is for beginner, so it provide easy installation manual.
 
-\subsection{Building Web-like Client}
-\textit{ }
-
-\subsection{Instruction for Users}
 \begin{itemize}
-  \item Description
-\end{itemize}
-\textit{ }
-
-\subsection{Building Search and Select UI}
-\begin{itemize}
-  \item Textbox for a query
-  \item Cardbox to code select and check
+  \item manual file
   \begin{itemize}
-    \item Checkbox for choosing code
+    \item The user will be able to understand the installation intuitively.
   \end{itemize}
-  \item Expandability
+  \item One zip file construction
   \begin{itemize}
-    \item Can scroll infinitely (like Facebook) in case there are lot of result
-  \end{itemize}
-  \item Show result code
-  \begin{itemize}
-    \item Textbox for code lines
+    \item Because the file is provided as a single file on the Internet, the only thing the user need to do is download and unzip the file.
   \end{itemize}
 \end{itemize}
 \textit{ }
 
-\subsection{Checking Code Validity}
+
+\subsection{Building Portable Client}
+ Portable client can help the user easy to use the program regardless whichever OS user uses
+
 \begin{itemize}
-  \item Let users know the validity of the codes
+  \item Building one window composition
+  \begin{itemize}
+    \item This will help user understand how program works easily
+  \end{itemize}
 \end{itemize}
 \textit{ }
 
-\subsection{Providing Information Security}
+
+\subsection{Building instruction for Users}
+ Instructions help user run the program are provided by text file, brief movie, and tooltips
+
 \begin{itemize}
-  \item Prevent from user clicking the button twice
-  \item Immediate response to button can make system overload
+  \item Building Readme.txt
+  \begin{itemize}
+    \item Give basic instruction
+  \end{itemize}
+  \item Building basic tutorial.mov
+  \begin{itemize}
+    \item Give demo-like tutorial
+  \end{itemize}
+  \item Building tooltip
+  \begin{itemize}
+    \item When hovering on a button for 3 seconds, program show up a tool tip
+  \end{itemize}
+\end{itemize}
+\textit{ }
+
+
+\subsection{Executing Client}
+ Executing the main program 
+
+\begin{itemize}
+  \item Opening the main program
+  \item Program shows up within 1 minute
+\end{itemize}
+\textit{ }
+
+
+\subsection{Closing Client}
+ Closing Whole Program 
+
+\begin{itemize}
+  \item Program should be terminated whenever user wants
+  \item Whole process should be terminated within 1 minute, without error
+\end{itemize}
+\textit{ }
+
+
+\subsection{Building Select UI}
+ User interface for search with ease to use
+
+\begin{itemize}
+  \item search window
+  \begin{itemize}
+    \item A window from which users can start searching
+  \end{itemize}
+  \item query textbox
+  \begin{itemize}
+    \item A textbox from which users can make a query in text type
+  \end{itemize}
+  \item select code checkbox
+  \begin{itemize}
+    \item A checkbox from which users can decide what program language to show result
+  \end{itemize}
+  \item Expandability   \begin{itemize}
+    \item Can scroll infinitely (like Facebook) in case there are lot of results
+  \end{itemize}
+  \item search button   \begin{itemize}
+    \item A button from which users can start the search
+  \end{itemize}
+\end{itemize}
+\textit{ }
+
+
+\subsection{Building Candidate UI}
+ User interface for select code with ease to use
+
+\begin{itemize}
+  \item Candidate window
+  \begin{itemize}
+    \item A window from which users can select the code 
+  \end{itemize}
+  \item query textbox
+  \begin{itemize}
+    \item A textbox from which users can see the code in several program language
+  \end{itemize}
+  \item select code checkbox
+  \begin{itemize}
+    \item A checkbox from which users can select which program language to show result
+  \end{itemize}
+  \item Expandability 
+  \begin{itemize}
+    \item Can scroll infinitely in case there are lot of results
+  \end{itemize}
+  \item Compile button 
+  \begin{itemize}
+    \item A button from which users can start compile
+  \end{itemize}
+\end{itemize}
+\textit{ }
+
+
+\subsection{Building compile UI}
+ User interface for showing progress of the work with ease to use
+
+\begin{itemize} 
+  \item compile window
+  \begin{itemize}
+    \item A window showing progress of compile
+  \end{itemize}
+  \item code showing textbox
+  \begin{itemize}
+    \item A textbox from which users can see the code in selected program language
+  \end{itemize}
+  \item progress bar
+  \begin{itemize}
+    \item A Bar showing the progress of the task as a percentage
+  \end{itemize}
+  \item Expandability   
+  \begin{itemize}
+    \item Can scroll infinitely in case there are lot of results
+  \end{itemize}
+  \item abort button
+  \begin{itemize}
+    \item A button from which users can abort compile
+  \end{itemize}
+\end{itemize}
+\textit{ }
+
+
+\subsection{Building \compile_success UI}
+ User interface for showing successful compiled code with ease to copy, apply or expand
+
+\begin{itemize}
+  \item success window
+  \begin{itemize}
+    \item A window showing the successful compiled result of selected code
+  \end{itemize}
+  \item code showing textbox
+  \begin{itemize}
+    \item A textbox from which users can see the code in selected program language
+  \end{itemize}
+  \item inputbox
+  \begin{itemize}
+    \item A textbox from which users can test input
+  \end{itemize}
+  \item outputbox
+  \begin{itemize}
+    \item A textbox from which users can test input
+  \end{itemize}
+  \item copy button
+  \begin{itemize}
+    \item ???
+  \end{itemize}
+\end{itemize}
+\textit{ }
+
+
+\subsection{Building compile\_fail UI}
+ User interface for select code with ease to use
+
+\begin{itemize}
+  \item fail window
+  \begin{itemize}
+    \item A window showing the failed result of selected code
+  \end{itemize}
+  \item code showing textbox
+  \begin{itemize}
+    \item A textbox from which users can see the code in selected program language
+  \end{itemize}
+  \item error showing textbox
+  \begin{itemize}
+    \item A textbox from which users can see the error code
+  \end{itemize}
+  \item copy button
+  \begin{itemize}
+    \item A button from which users can copy the code in selected program language
+  \end{itemize}
 \end{itemize}
 \textit{ }
 
 
 \textit{\textbf{Backend Related}}
 \textit{ }
-
 
 \subsection{Search Query Processing}
 \begin{itemize}
@@ -219,38 +377,80 @@ There are numerous codes that are floating on the internet. But it is not verifi
 \end{itemize}
 \textit{ }
 
+
 \subsection{Learning System for Maximizing Accuracy}
 \begin{itemize}
   \item Collect data from user and get feedback from them
 \end{itemize}
 \textit{ }
 
-\subsection{Crawling and Parsing}
+
+\subsection{Crawling}
 \begin{itemize}
-  \item Crawling data from website like programmer forum
-  \item Parsing program codes
+  \item First search
   \begin{itemize}
-    \item Parsing the codes using keywords for finding start-end point
-    \item ex) including <iostream>, return 0 in c++
+    \item Fast search from programmer forum
+    \item Crawling data from Stackoverflow
+  \item Second search
+  \begin{itemize}
+    \item Broad search through search engine
+    \item Crawling data from Google
   \end{itemize}
 \end{itemize}
 \textit{ }
+
+
+\subsection{Parsing}
+\begin{itemize}
+  \item Parsing the codes using tree structure
+  \begin{itemize}
+    \item Check tree structure whether it is code part or not
+  \end{itemize}
+\end{itemize}
+\textit{ }
+
 
 \subsection{Grammar Check}
 \begin{itemize}
-  \item DB for grammar rules
+  \item Save code into code file
   \begin{itemize}
-    \item Building rules for testing the codes wheter valid or not
+    \item Before compiling code, convert string into compilable file
   \end{itemize}
-  \item Algorithm to check the grammar
+  \item Conduct compiling code test
+  \begin{itemize}
+    \item Compiling code with GNU Compiler Collection
+  \end{itemize}
 \end{itemize}
 \textit{ }
 
-\subsection{Testing Compile}
+
+\subsection{Copy Code}
   \begin{itemize}
-    \item Compiling searched codes using CRC
+    \item Copy whole found string into clipboard
   \end{itemize}
 \textit{ }
+
+
+\subsection{Error Detection}
+\begin{itemize}
+  \item Detect error code
+  \begin{itemize}
+    \item When compile test is failed, find which error is occur
+  \end{itemize}
+  \item Print error string
+  \begin{itemize}
+    \item Translate error code into string for user to understand
+  \end{itemize}
+\end{itemize}
+\textit{ }
+
+
+\subsection{Edit Code Snippet}
+  \begin{itemize}
+    \item enable user to edit code manually when the compile test ended with error
+  \end{itemize}
+\textit{ }
+
 
 \section{DEVELOPMENT ENVIRONMENT} % (fold)
 \label{sec:development_environment}
@@ -636,7 +836,7 @@ Coding Helper gives the code.
 \begin{enumerate}
 \item Description
   \begin{itemize}
-    \item Do encoding test to know if it is right code
+    \item Check tree structure whether it is code part or not
   \end{itemize}
   \item Process(or I/O)
   \begin{enumerate}
