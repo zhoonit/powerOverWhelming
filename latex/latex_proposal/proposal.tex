@@ -12,7 +12,7 @@
 \renewcommand\enumerate{\OLDenumerate\addtolength{\itemsep}{1em}}
 \renewcommand\thesubsectiondis{\AlphAlph{\value{subsection}}.}% for the headings in the text
 \renewcommand\thesubsection{\mbox{\thesection-\AlphAlph{\value{subsection}}}}% for the ToC, for example     
-
+\newcommand{\cmt}[1]{\PackageWarning{comment}{#1}}
 
 % correct bad hyphenation here
 \hyphenation{op-tical net-works semi-conduc-tor}
@@ -20,7 +20,7 @@
 
 \begin{document}
 
-\title{Assignment Helper\\ Empowering Your Programming Skill \\ Power OVERWHELMING co.}
+\title{Coding Helper\\ Empowering Your Programming Skill \\ Power OVERWHELMING co.}
 
 % author names and affiliations
 % use a multiple column layout for up to three different
@@ -53,21 +53,29 @@
 % for over three affiliations, or if they all won't fit within the width
 % of the page, use this alternative format:
 % 
+% \author{\IEEEauthorblockN{Ji-hoon Lee\IEEEauthorrefmark{1},
+% Jae-gook Kim\IEEEauthorrefmark{2},
+% San Gu\IEEEauthorrefmark{3}, and
+% Kyo-ho Lee\IEEEauthorrefmark{4} }
+% \IEEEauthorblockA{\IEEEauthorrefmark{2}\IEEEauthorrefmark{3}\IEEEauthorrefmark{4}Department of Information System}
+% \IEEEauthorblockA{\IEEEauthorrefmark{1}Department of Finance, Business School}
+% \IEEEauthorblockA{Hanyang University, Seoul, Korea}
+% \IEEEauthorblockA{Email: \IEEEauthorrefmark{1}starypoc@hanyang.ac.kr,  \IEEEauthorrefmark{2}claretta@hanyang.ac.kr, \IEEEauthorrefmark{3}hyunsichang@hanyang.ac.kr, \IEEEauthorrefmark{4}1equal2@hanyang.ac.kr}}
+
 \author{\IEEEauthorblockN{Ji-hoon Lee\IEEEauthorrefmark{1},
-Jae-gook Kim\IEEEauthorrefmark{2},
-Kyung-min Kim\IEEEauthorrefmark{3}, and
-Kyo-ho Lee\IEEEauthorrefmark{4} }
+Jae-gook Kim\IEEEauthorrefmark{2}, and
+San Gu\IEEEauthorrefmark{3} }
 \IEEEauthorblockA{\IEEEauthorrefmark{2}\IEEEauthorrefmark{3}\IEEEauthorrefmark{4}Department of Information System}
 \IEEEauthorblockA{\IEEEauthorrefmark{1}Department of Finance, Business School}
 \IEEEauthorblockA{Hanyang University, Seoul, Korea}
-\IEEEauthorblockA{Email: \IEEEauthorrefmark{1}starypoc@hanyang.ac.kr,  \IEEEauthorrefmark{2}claretta@hanyang.ac.kr, \IEEEauthorrefmark{3}kimkmhk@hanyang.ac.kr, \IEEEauthorrefmark{4}1equal2@hanyang.ac.kr}}
+\IEEEauthorblockA{Email: \IEEEauthorrefmark{1}starypoc@hanyang.ac.kr,  \IEEEauthorrefmark{2}claretta@hanyang.ac.kr, \IEEEauthorrefmark{3}hyunsichang@hanyang.ac.kr} }
 
 
 
 \maketitle
 
 \begin{abstract}
-Assignment Helper is a program to help people who have difficulties with their programming language assignments. Assignment Helper will able to help the assignment by crawling the data from webs such as programmer forums and then find similar questions and related codes. It will also have a verification function and will check the codes by using CRC or other compilers. It shall check it by testing the input, output and the expectation all together.
+coding Helper is a program to help people who have difficulties with their programming language assignments. coding Helper will able to help the coding by crawling the data from webs such as programmer forums and then find similar questions and related codes. It will also have a verification function and will check the codes by using CRC or other compilers. It shall check it by testing the input, output and the expectation all together.
 
 \centering
 
@@ -83,14 +91,14 @@ Assignment Helper is a program to help people who have difficulties with their p
 \hline
 \bfseries Role & \bfseries Name & \bfseries Task Description \\
 \hline\hline
-Developer Manager  & Kim Jae-gook & \parbox[t]{5cm}{Managing whole process of developing\\ the program. }\\
+Developer & Gu San & \parbox[t]{5cm}{Managing whole process of developing\\ the program. }\\
 \hline
 Users & Lee Ji-hoon & \parbox[t]{5cm}{Seeking for the usefulness compare\\ to other similar programs.}\\
 \hline
-Cutomers & Kim Kyung-min & \parbox[t]{5cm}{Finding out whether the project is \\ valuable.}\\
+Cutomers & Kim Jae-kook & \parbox[t]{5cm}{Finding out whether the project is \\ valuable.}\\
 \hline
-Developer & Lee Kyu-ho & \parbox[t]{5cm}{Implementing the program.}\\
-\hline
+% Developer & Lee Kyu-ho & \parbox[t]{5cm}{Implementing the program.}\\
+% \hline
 
 \end{tabular}
 \end{adjustbox}
@@ -104,7 +112,7 @@ Developer & Lee Kyu-ho & \parbox[t]{5cm}{Implementing the program.}\\
 \section{Introduction}
 
 \subsection{Motivation}
-We have started this project with the motivation to help students (especially freshman) who are struggling with their assignments. Other assignments like history or natural science can easily find their assignment sources quickly from just googling it simply. However, it is impossible to do that simple procedure in programming language assignment. Without perfect knowledge about the computer languages, it comes out difficult to solve their programming language assignment. 
+We have started this project with the motivation to help students (especially freshman) who are struggling with their assignments. Other assignments like history or natural science can easily find their coding sources quickly from just googling it simply. However, it is impossible to do that simple procedure in programming language assignment. Without perfect knowledge about the computer languages, it comes out difficult to solve their programming language assignment. 
 
 We discussed about a solution to solve this. We concluded that it is not easy to study programming languages especially to the students who studied only at school and have never lived closed to computer languages; The students who only studied subjects for KSAT, the entrance exam for university!
 
@@ -119,27 +127,27 @@ Our program aims for helping students who is unfamiliar with programming paradig
 There are many programs for teaching programing language, but Scratch is the most representative one. Scratch does not execute commands by entering code with long instructions. Instead, click and drag the block to move the feature to perform the command. Scratch is a popular child-coding tool for schools and institutions worldwide. Scratch's intuitive interface is useful but has difficulty to find right answer. If one wants to make a program working properly. He should keep try until it matches. It is very frustrating for those who want to know the correct answer right away.
 
 \subsubsection{Easier Coding: Emmet}
-Emmet is a programming language that makes it easy to write CSS, even though it can save your coding time, the language you should learn for one programming language increases. Also, if you are not aware of the language, it is hard to get used to it. Instead, Assignment Helper will provide the coding style with natural language processing.
+Emmet is a programming language that makes it easy to write CSS, even though it can save your coding time, the language you should learn for one programming language increases. Also, if you are not aware of the language, it is hard to get used to it. Instead, Coding Helper will provide the coding style with natural language processing.
 
 \subsubsection{Crowdsourcing and Knowledge Sharing: Stackoverflow}
 Stackoverflow is a site where programmers ask and answers about programming. Stackoverflow is the largest developer community on the scale. It will be a good idea to ask questions here for the answers comes up very quickly.
 Since there are a lot of questions that has been answered, the problems that you need answers are mostly up on the forum already. In other words, rather than asking, you are more likely to search and get answers. But the point is for the beginners, it can even be hard to determine what to find. You must define the search keywords yourself. It would be a big hurdle for beginners. The limitation is that there is no recommend keywords.
 
-\subsection{Distinguishable Features of Assignment Helper} % (fold)
+\subsection{Distinguishable Features of Coding Helper} % (fold)
 \label{sub:distinguishable_features_of_assignment_helper}
-There are countless amounts of services that tries to help the problem we defined. Our Assignment Helper will have differentiating features from existing services. Some distinguishable features are as follows:
+There are countless amounts of services that tries to help the problem we defined. Our Coding Helper will have differentiating features from existing services. Some distinguishable features are as follows:
 
 \subsubsection{Lightening The Burden On Determining Search Keywords}
 For some questions for beginners, it could be hard to determine a search keyword by themselves. For example, if they want to know what list object can 'do', it is appropriate to google on 'list method in python'. To google the word 'method', the user should know the word beforehand, which is practically impossible without any additional help.
 
 
-Assignment Helper will allow to search on more natural-language-like queries, making the user easy to search with their actual thoughts.
+Coding Helper will allow to search on more natural-language-like queries, making the user easy to search with their actual thoughts.
 
 \subsubsection{Grouping Related Questions}
-With natural-language-like queries, it could be hard to guess what the user intended from the very beginning. Assignment Helper will explore broad range of possibilities and suggest each to the users.
+With natural-language-like queries, it could be hard to guess what the user intended from the very beginning. Coding Helper will explore broad range of possibilities and suggest each to the users.
 
 \subsubsection{Getting the Working Codes Right Away from the Internet}
-There are numerous codes that are floating on the internet. But it is not verified whether the codes on the internet works properly or not. Assignment Helper will check the validity of the code automatically 
+There are numerous codes that are floating on the internet. But it is not verified whether the codes on the internet works properly or not. Coding Helper will check the validity of the code automatically 
 
 % subsection distinguishable_features_of_assignment_helper (end)
 
@@ -148,54 +156,212 @@ There are numerous codes that are floating on the internet. But it is not verifi
 
 
 \textit{\textbf{Frontend Related}}
+\textit{ }
 
 \subsection{Building installation Manual}
-\textit{ }
+ The program is for beginner, so it provide easy installation manual.
 
-\subsection{Building Web-like Client}
-\textit{ }
-
-\subsection{Instruction for Users}
 \begin{itemize}
-  \item Description
-\end{itemize}
-\textit{ }
-
-\subsection{Building Search and Select UI}
-\begin{itemize}
-  \item Textbox for a query
-  \item Cardbox to code select and check
+  \item manual file
   \begin{itemize}
-    \item Checkbox for choosing code
+    \item The user will be able to understand the installation intuitively.
   \end{itemize}
-  \item Expandability
+  \item One zip file construction
   \begin{itemize}
-    \item Can scroll infinitely (like Facebook) in case there are lot of result
-  \end{itemize}
-  \item Show result code
-  \begin{itemize}
-    \item Textbox for code lines
+    \item Because the file is provided as a single file on the Internet, the only thing the user need to do is download and unzip the file.
   \end{itemize}
 \end{itemize}
 \textit{ }
 
-\subsection{Checking Code Validity}
+
+\subsection{Building Portable Client}
+ Portable client can help the user easy to use the program regardless whichever OS user uses
+
 \begin{itemize}
-  \item Let users know the validity of the codes
+  \item Building one window composition
+  \begin{itemize}
+    \item This will help user understand how program works easily
+  \end{itemize}
 \end{itemize}
 \textit{ }
 
-\subsection{Providing Information Security}
+
+\subsection{Building instruction for Users}
+ Instructions help user run the program are provided by text file, brief movie, and tooltips
+
 \begin{itemize}
-  \item Prevent from user clicking the button twice
-  \item Immediate response to button can make system overload
+  \item Building Readme.txt
+  \begin{itemize}
+    \item Give basic instruction
+  \end{itemize}
+  \item Building basic tutorial.mov
+  \begin{itemize}
+    \item Give demo-like tutorial
+  \end{itemize}
+  \item Building tooltip
+  \begin{itemize}
+    \item When hovering on a button for 3 seconds, program show up a tool tip
+  \end{itemize}
+\end{itemize}
+\textit{ }
+
+
+\subsection{Executing Client}
+ Executing the main program 
+
+\begin{itemize}
+  \item Opening the main program
+  \item Program shows up within 1 minute
+\end{itemize}
+\textit{ }
+
+
+\subsection{Closing Client}
+ Closing Whole Program 
+
+\begin{itemize}
+  \item Program should be terminated whenever user wants
+  \item Whole process should be terminated within 1 minute, without error
+\end{itemize}
+\textit{ }
+
+
+\subsection{Building Select UI}
+ User interface for search with ease to use
+
+\begin{itemize}
+  \item search window
+  \begin{itemize}
+    \item A window from which users can start searching
+  \end{itemize}
+  \item query textbox
+  \begin{itemize}
+    \item A textbox from which users can make a query in text type
+  \end{itemize}
+  \item select code checkbox
+  \begin{itemize}
+    \item A checkbox from which users can decide what program language to show result
+  \end{itemize}
+  \item Expandability   \begin{itemize}
+    \item Can scroll infinitely (like Facebook) in case there are lot of results
+  \end{itemize}
+  \item search button   \begin{itemize}
+    \item A button from which users can start the search
+  \end{itemize}
+\end{itemize}
+\textit{ }
+
+
+\subsection{Building Candidate UI}
+ User interface for select code with ease to use
+
+\begin{itemize}
+  \item Candidate window
+  \begin{itemize}
+    \item A window from which users can select the code 
+  \end{itemize}
+  \item query textbox
+  \begin{itemize}
+    \item A textbox from which users can see the code in several program language
+  \end{itemize}
+  \item select code checkbox
+  \begin{itemize}
+    \item A checkbox from which users can select which program language to show result
+  \end{itemize}
+  \item Expandability 
+  \begin{itemize}
+    \item Can scroll infinitely in case there are lot of results
+  \end{itemize}
+  \item Compile button 
+  \begin{itemize}
+    \item A button from which users can start compile
+  \end{itemize}
+\end{itemize}
+\textit{ }
+
+
+\subsection{Building compile UI}
+ User interface for showing progress of the work with ease to use
+
+\begin{itemize} 
+  \item compile window
+  \begin{itemize}
+    \item A window showing progress of compile
+  \end{itemize}
+  \item code showing textbox
+  \begin{itemize}
+    \item A textbox from which users can see the code in selected program language
+  \end{itemize}
+  \item progress bar
+  \begin{itemize}
+    \item A Bar showing the progress of the task as a percentage
+  \end{itemize}
+  \item Expandability   
+  \begin{itemize}
+    \item Can scroll infinitely in case there are lot of results
+  \end{itemize}
+  \item abort button
+  \begin{itemize}
+    \item A button from which users can abort compile
+  \end{itemize}
+\end{itemize}
+\textit{ }
+
+
+\subsection{Building \compile_success UI}
+ User interface for showing successful compiled code with ease to copy, apply or expand
+
+\begin{itemize}
+  \item success window
+  \begin{itemize}
+    \item A window showing the successful compiled result of selected code
+  \end{itemize}
+  \item code showing textbox
+  \begin{itemize}
+    \item A textbox from which users can see the code in selected program language
+  \end{itemize}
+  \item inputbox
+  \begin{itemize}
+    \item A textbox from which users can test input
+  \end{itemize}
+  \item outputbox
+  \begin{itemize}
+    \item A textbox from which users can test input
+  \end{itemize}
+  \item copy button
+  \begin{itemize}
+    \item ???
+  \end{itemize}
+\end{itemize}
+\textit{ }
+
+
+\subsection{Building compile\_fail UI}
+ User interface for select code with ease to use
+
+\begin{itemize}
+  \item fail window
+  \begin{itemize}
+    \item A window showing the failed result of selected code
+  \end{itemize}
+  \item code showing textbox
+  \begin{itemize}
+    \item A textbox from which users can see the code in selected program language
+  \end{itemize}
+  \item error showing textbox
+  \begin{itemize}
+    \item A textbox from which users can see the error code
+  \end{itemize}
+  \item copy button
+  \begin{itemize}
+    \item A button from which users can copy the code in selected program language
+  \end{itemize}
 \end{itemize}
 \textit{ }
 
 
 \textit{\textbf{Backend Related}}
 \textit{ }
-
 
 \subsection{Search Query Processing}
 \begin{itemize}
@@ -211,38 +377,80 @@ There are numerous codes that are floating on the internet. But it is not verifi
 \end{itemize}
 \textit{ }
 
+
 \subsection{Learning System for Maximizing Accuracy}
 \begin{itemize}
   \item Collect data from user and get feedback from them
 \end{itemize}
 \textit{ }
 
-\subsection{Crawling and Parsing}
+
+\subsection{Crawling}
 \begin{itemize}
-  \item Crawling data from website like programmer forum
-  \item Parsing program codes
+  \item First search
   \begin{itemize}
-    \item Parsing the codes using keywords for finding start-end point
-    \item ex) including <iostream>, return 0 in c++
+    \item Fast search from programmer forum
+    \item Crawling data from Stackoverflow
+  \item Second search
+  \begin{itemize}
+    \item Broad search through search engine
+    \item Crawling data from Google
   \end{itemize}
 \end{itemize}
 \textit{ }
+
+
+\subsection{Parsing}
+\begin{itemize}
+  \item Parsing the codes using tree structure
+  \begin{itemize}
+    \item Check tree structure whether it is code part or not
+  \end{itemize}
+\end{itemize}
+\textit{ }
+
 
 \subsection{Grammar Check}
 \begin{itemize}
-  \item DB for grammar rules
+  \item Save code into code file
   \begin{itemize}
-    \item Building rules for testing the codes wheter valid or not
+    \item Before compiling code, convert string into compilable file
   \end{itemize}
-  \item Algorithm to check the grammar
+  \item Conduct compiling code test
+  \begin{itemize}
+    \item Compiling code with GNU Compiler Collection
+  \end{itemize}
 \end{itemize}
 \textit{ }
 
-\subsection{Testing Compile}
+
+\subsection{Copy Code}
   \begin{itemize}
-    \item Compiling searched codes using CRC
+    \item Copy whole found string into clipboard
   \end{itemize}
 \textit{ }
+
+
+\subsection{Error Detection}
+\begin{itemize}
+  \item Detect error code
+  \begin{itemize}
+    \item When compile test is failed, find which error is occur
+  \end{itemize}
+  \item Print error string
+  \begin{itemize}
+    \item Translate error code into string for user to understand
+  \end{itemize}
+\end{itemize}
+\textit{ }
+
+
+\subsection{Edit Code Snippet}
+  \begin{itemize}
+    \item enable user to edit code manually when the compile test ended with error
+  \end{itemize}
+\textit{ }
+
 
 \section{DEVELOPMENT ENVIRONMENT} % (fold)
 \label{sec:development_environment}
@@ -270,10 +478,10 @@ There are numerous codes that are floating on the internet. But it is not verifi
 
 \begin{enumerate}
   \item \textit{Sublime Text 3}: Text editor for general use
-  \item \textit{qt designer 4.12}: GUI based GUI designer for Qt environment
+  \item \textit{qt designer 5.90}: GUI based GUI designer for Qt environment
   \item \textit{pyCharm}: genral IDE for Python
   \item \textit{pandas}: Python package to deal with datas
-  \item \textit{PyQt4}: Python package to deal with Qt gui
+  \item \textit{PyQt5}: Python package to deal with Qt gui
   \item \textit{stackexchage REST API}: REST API to do stack overflow search and get datas
   \item \textit{beautifulsoup4}: Python package for parsing XML and HTML
   \item \textit{requests}: Python package that assists to issue an HTML Request
@@ -292,8 +500,8 @@ There are numerous codes that are floating on the internet. But it is not verifi
 \includegraphics[width=0.5\textwidth]{./figures/Process_Flow.png}
 Our targeted users do not know how to code.
 
-Assignment Helper gives the code.
-\caption{Process Flow of Assignment Helper}
+Coding Helper gives the code.
+\caption{Process Flow of Coding Helper}
 \label{fig_process_flow}
 \end{figure}
 
@@ -628,7 +836,7 @@ Assignment Helper gives the code.
 \begin{enumerate}
 \item Description
   \begin{itemize}
-    \item Do encoding test to know if it is right code
+    \item Check tree structure whether it is code part or not
   \end{itemize}
   \item Process(or I/O)
   \begin{enumerate}
@@ -1004,8 +1212,18 @@ see Figure~\ref{keyword_search}
 This module search for appropriate codes using keywords from the \textit{query} module.
 \textit{get\_code} imports \textit{requests} for query requesting to the server, mostly using REST API supported from forums.
 For raw html files, the module imports \textit{beautifulsoup4} package to parse the code.
-After crawling codes from sites, this module also evaluates the quality of the code.
 
+Secondly, search for codes in Google and retrieve result.
+To get proper result from Google, we spoofed request header to firefox 53.0
+For codes from Github, The program manipulates the source to get raw file.
+
+After crawling codes from sites, this module also evaluates the quality of the code.
+Codes are evaluated in three ways.
+Firtly, codes are evaluated with the common properties like lenght of the codes.
+Secondly, codes are evaluated with code specific properties. 
+For example, the program check number of imports when evaluating python code.
+Lastly, codes are evaluated with the origin, where the code came from.
+For example, codes are highly evaluated when connected with google.
 
 see Figure~\ref{get_info}
 % subsection search_crawling (end)
@@ -1063,7 +1281,49 @@ see Figure~\ref{gui}
 \section{Use Case} % (fold)
 \label{sec:use_case}
 
-\subsection{install}
+\cmt{insert use case overview figure}
+
+
+\cmt{overview 예시 시작}
+
+
+
+\subsection{Installation and First Use}
+%table 예시
+\begin{table}[ht]
+\renewcommand{\arraystretch}{1.3}
+\caption{Installation and First Use}
+\label{table:usecase1}
+\centering
+\begin{adjustbox}{width=0.5\textwidth}
+\small
+\begin{tabular}{c|c}
+\hline
+\multicolumn{2}{c}{Use Case Over View} \\
+\hline
+Name of Use Case & Installation and First Use \\
+\hline
+Actor & User \\
+\hline
+Entry Condition & \\
+\hline
+\multicolumn{2}{c}{Flow of Events}\\
+\hline
+\multicolumn{2}{c}{
+\parbox[t]{5cm}{
+  1. hi \\
+  2. by \\
+  3. third \\
+  }
+}\\
+\hline
+
+\end{tabular}
+\end{adjustbox}
+\end{table}
+%
+
+\subsubsection{install}
 This use case specifies the way user install the program
 
 \begin{itemize}
@@ -1075,7 +1335,7 @@ This use case specifies the way user install the program
 
 
 
-\subsection{first run the program}
+\subsubsection{first run the program}
 This use case presents how the program will act when the program is run very first time
 \begin{itemize}
   \item initial running the program
@@ -1086,7 +1346,7 @@ This use case presents how the program will act when the program is run very fir
 
 
 
-\subsection{do the tutorial}
+\subsubsection{do the tutorial}
 This use case specifies how the program will act when user do the tutorial
 \begin{itemize}
   \item clicking the tutorial button on main window or initial setting 
@@ -1097,7 +1357,7 @@ This use case specifies how the program will act when user do the tutorial
 
 
 
-\subsection{open configuration window}
+\subsubsection{open configuration window}
 This use case specifies how the configuration window looks like when the user opens the configuration window
 \begin{itemize}
   \item initial running the program or double clicking on conf.exe
@@ -1108,7 +1368,7 @@ This use case specifies how the configuration window looks like when the user op
 
 
 
-\subsection{check the languages and confirm installation}
+\subsubsection{check the languages and confirm installation}
 This use case specifies how the program should act in the configuration window. In the configuration window, the user can easily install language packs from server.
 \begin{itemize}
   \item check language packs to install / uncheck languages to uninstall
@@ -1118,7 +1378,7 @@ This use case specifies how the program should act in the configuration window. 
 
 
 
-\subsection{open readme}
+\subsubsection{open readme}
 This use case describes about opening the readme file.
 \begin{itemize}
   \item open a readme file which gives basic installation
@@ -1127,7 +1387,7 @@ This use case describes about opening the readme file.
 
 
 
-\subsection{run the program(main.exe)}
+\subsubsection{run the program(main.exe)}
 This use case specifies of initializing the program when the user executes the program.
 \begin{itemize}
   \item running the program
@@ -1137,7 +1397,7 @@ This use case specifies of initializing the program when the user executes the p
 
 
 
-\subsection{tooltips}
+\subsubsection{tooltips}
 This use case specifies about how the user enables the tooltips
 \begin{itemize}
   \item hanging mouse on the buttons for 3 seconds
@@ -1146,9 +1406,7 @@ This use case specifies about how the user enables the tooltips
 \end{itemize}
 \textit{}
 
-
-
-\subsection{view search history}
+\subsubsection{view search history}
 This use case specifies about viewing search history. User can view the search history and replicates the search result using search history.
 \begin{itemize}
   \item clicking search history button
@@ -1157,7 +1415,7 @@ This use case specifies about viewing search history. User can view the search h
 \textit{}
 
 
-\subsection{enter a query}
+\subsubsection{enter a query}
 This use case sepecfies how users can search their questions. The users first select the language and then search on window
 \begin{itemize}
   \item enter a query on the search window
@@ -1170,7 +1428,7 @@ This use case sepecfies how users can search their questions. The users first se
 
 
 
-\subsection{submit the query}
+\subsubsection{submit the query}
 This use case specifies the procedures when submitting the query
 \begin{itemize}
   \item click 'search' button
@@ -1181,7 +1439,7 @@ This use case specifies the procedures when submitting the query
 \textit{}
 
 
-\subsection{select code}
+\subsubsection{select code}
 This use case specifies about how user can interact with \textit{candidates} window. This is the main interaction with the program.
 \begin{itemize}
   \item view each code to compile
@@ -1192,7 +1450,7 @@ This use case specifies about how user can interact with \textit{candidates} win
 
 
 
-\subsection{modify code}
+\subsubsection{modify code}
 This use case specifies about modifiying the code if the user wants to.
 \begin{itemize}
   \item the user decide whether the codes needs to be refined
@@ -1203,8 +1461,7 @@ This use case specifies about modifiying the code if the user wants to.
 \textit{}
 
 
-
-\subsection{compile code}
+\subsubsection{compile code}
 This use case specifies about compiling the code, when user clicks copile button.
 \begin{itemize}
   \item after select and modify, user press compile button
@@ -1215,7 +1472,7 @@ This use case specifies about compiling the code, when user clicks copile button
 
 
 
-\subsection{pop up fail window}
+\subsubsection{pop up fail window}
 This use case specifies when the compile fails, shows error result.
 \begin{itemize}
   \item failure of the compiling triggers the fail window
@@ -1226,7 +1483,7 @@ This use case specifies when the compile fails, shows error result.
 
 
 
-\subsection{pop up success window}
+\subsubsection{pop up success window}
 This use case specifies when the compile succeed, shows copy code window.
 \begin{itemize}
   \item pops up the window
@@ -1237,7 +1494,7 @@ This use case specifies when the compile succeed, shows copy code window.
 
 
 
-\subsection{test input}
+\subsubsection{test input}
 This use case specifies about testing more input using \textit{validation} module.
 \begin{itemize}
   \item put input on the input textbox
@@ -1248,7 +1505,7 @@ This use case specifies about testing more input using \textit{validation} modul
 
 
 
-\subsection{copy code}
+\subsubsection{copy code}
 This use case specifies when the user wants to save result, this provides the way to save the result.
 \begin{itemize}
   \item press copy code button
@@ -1258,7 +1515,7 @@ This use case specifies when the user wants to save result, this provides the wa
 
 
 
-\subsection{click x button}
+\subsubsection{click x button}
 This use case specifies how the program act when x buttons are clicked
 \begin{itemize}
   \item click x button
@@ -1269,7 +1526,7 @@ This use case specifies how the program act when x buttons are clicked
 
 
 
-\subsection{program exit}
+\subsubsection{program exit}
 This use case specifies how to close the program.
 \begin{itemize}
   \item click x button on main(search) window
