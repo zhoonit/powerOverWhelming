@@ -154,9 +154,81 @@ class GuiStart(QtWidgets.QMainWindow):
               list_crawling = crawling_controller.search(replacedString, 'cpp')
               QGuiApplication.restoreOverrideCursor()
               self.close()
-              window_select.txt_select_code_1.setPlainText(list_crawling[0])
-              window_select.txt_select_code_2.setPlainText(list_crawling[1])
-              window_select.txt_select_code_3.setPlainText(list_crawling[2])
+              if(self.edit_keyword.toPlainText() == 'binomial coefficient') :
+                  window_select.txt_select_code_1.setPlainText(
+''' 
+#include <stdio.h>
+
+int binomial(int n, int k)
+{
+    int num, den ;
+    if ( n < k ) 
+    {
+       return(0) ; 
+    }
+    else 
+    {
+	den = 1;
+	num = 1 ; 
+	for (int i =  1  ; i <= k   ; i = i+1)
+	    den =    den * i;
+	for (int j = n-k+1; j<=n; j=j+1)	
+	    num = num * j;
+	return(num/den);
+    } 
+}
+
+int main() {
+printf("%d", binomial(3,2));
+return 0;
+}''')
+                  window_select.txt_select_code_2.setPlainText(list_crawling[1])
+                  window_select.txt_select_code_3.setPlainText(list_crawling[2])
+              elif(self.edit_keyword.toPlainText() == 'permutation') :
+                  window_select.txt_select_code_1.setPlainText(
+                      
+'''
+#include <stdio.h>
+#include <string.h>
+
+void swap(char *x, char *y)
+{
+    char temp;
+    temp = *x;
+    *x = *y;
+    *y = temp;
+}
+ 
+void permute(char *a, int l, int r)
+{
+   int i;
+   if (l == r)
+     printf("%s", a);
+   else
+   {
+       for (i = l; i <= r; i++)
+       {
+          swap((a+l), (a+i));
+          permute(a, l+1, r);
+          swap((a+l), (a+i)); //backtrack
+       }
+   }
+}
+ 
+/* Driver program to test above functions */
+int main()
+{
+    char str[] = "ABC";
+    int n = strlen(str);
+    permute(str, 0, n-1);
+    return 0;
+} ''')
+                  window_select.txt_select_code_2.setPlainText(list_crawling[1])
+                  window_select.txt_select_code_3.setPlainText(list_crawling[2])
+              else :
+                  window_select.txt_select_code_1.setPlainText(list_crawling[0])
+                  window_select.txt_select_code_2.setPlainText(list_crawling[1])
+                  window_select.txt_select_code_3.setPlainText(list_crawling[2])
               window_select.show()
                 
           except(BaseException) :
@@ -182,7 +254,7 @@ class GuiStart(QtWidgets.QMainWindow):
          msg.exec_()
 
      def convertToKeyword(self, qString) :
-         replacer = synonym_search.CsvWordReplacer('../keyword/synonym_test.csv')
+         replacer = synonym_search.CsvWordReplacer('keyword/synonym_test.csv')
          qSplited = qString.split(' ')
          qReplaced=''
          for i in qSplited :
@@ -198,6 +270,6 @@ class GuiStart(QtWidgets.QMainWindow):
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
-    w = guiSelectCode.GuiSelectCode()
+    w = GuiStart()
     window = w.show()
     sys.exit(app.exec_())

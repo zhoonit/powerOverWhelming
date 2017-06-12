@@ -38,13 +38,12 @@ def find_util():
 		finding_path = os.path.abspath(os.path.join(finding_path, '..'))
 
 	try:
-		gcc_path = finding_path + '\\util\\cpp\\MinGW64\\bin\\gcc'
+		gcc_path = finding_path + '\\util\\cpp\\MinGW64\\bin\\g++'
 	except NameError as e:
 		raise NameError
-
-	return gcc_path
 	
-
+	print(gcc_path)
+	return gcc_path
 
 def str_to_temp(code_string, code_ext):
 	'''
