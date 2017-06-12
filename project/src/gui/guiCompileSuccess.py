@@ -58,7 +58,6 @@ class GuiCompileSuccess(QtWidgets.QMainWindow) :
     def __init__(self):
         QtWidgets.QMainWindow.__init__(self)
         self.setupUi(self)
-        self.txt_output_test.setPlainText('123, 132, 213, 231, 312, 321')
         self.btn_test_compile.clicked.connect(self.testCompile)
 
     def testCompile(self) :

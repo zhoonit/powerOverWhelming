@@ -5,6 +5,7 @@ import guiStart
 sys.path.insert(1, 'C:/Users/GuSan/Desktop/powerOverWhelming/project/src/comp_exec')
 import validation
 import guiCompileSuccess
+import guiErrorCode
 import signal
 
 class GuiSelectCode(QtWidgets.QMainWindow) :
@@ -81,13 +82,9 @@ class GuiSelectCode(QtWidgets.QMainWindow) :
 
       def compile_click(self) :
         global window_compile_success
+        global window_compile_fail
         window_compile_success = guiCompileSuccess.GuiCompileSuccess()
-        if(self.opt_select_code_1.isChecked()) :
-            window_compile_success.txt_code_complete.setPlainText(self.loadText())
-        elif(self.opt_select_code_2.isChecked()) :
-            window_compile_success.txt_code_complete.setPlainText(self.loadText())
-        else : 
-            window_compile_success.txt_code_complete.setPlainText(self.loadText())
+        window_compile_fail = guiErrorCode.GuiErrorCode()
         self.completed = 0
         while self.completed<100 :
             self.completed+=0.001
@@ -102,7 +99,13 @@ class GuiSelectCode(QtWidgets.QMainWindow) :
            msg.setWindowTitle("컴파일 에러")
            msg.show()
            msg.exec_()
+           window_compile_fail.txt_error_code.setPlainText(self.loadText())
+           window_compile_fail.txt_error_context.setPlainText(tupleCompile[0])
+           window_compile_fail.show()
+           return window_compile_fail
         else :
+            window_compile_success.txt_code_complete.setPlainText(self.loadText())
+            window_compile_success.txt_output_test.setPlainText(tupleCompile[0])
             window_compile_success.show()
             self.close()
             return window_compile_success
