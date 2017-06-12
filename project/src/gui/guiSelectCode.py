@@ -107,7 +107,6 @@ class GuiSelectCode(QtWidgets.QMainWindow) :
             window_compile_success.txt_code_complete.setPlainText(self.loadText())
             window_compile_success.txt_output_test.setPlainText(tupleCompile[0])
             window_compile_success.show()
-            self.close()
             return window_compile_success
         
 
