@@ -1,4 +1,5 @@
 import sys, time
+import re
 
 from PyQt5 import QtCore, QtGui
 from PyQt5 import QtWidgets
@@ -157,7 +158,7 @@ class GuiStart(QtWidgets.QMainWindow):
               list_crawling = crawling_controller.search(replacedString, 'cpp')
               QGuiApplication.restoreOverrideCursor()
               self.close()
-              if(self.edit_keyword.toPlainText() == 'binomial coefficient') :
+              if(re.search(r'binomial coefficient', self.edit_keyword.toPlainText()) ):
                   window_select.txt_select_code_1.setPlainText(
 ''' 
 #include <stdio.h>
@@ -187,7 +188,7 @@ return 0;
 }''')
                   window_select.txt_select_code_2.setPlainText(list_crawling[1])
                   window_select.txt_select_code_3.setPlainText(list_crawling[2])
-              elif(self.edit_keyword.toPlainText() == 'permutation') :
+              elif(re.search(r'permutation', self.edit_keyword.toPlainText()) ):
                   window_select.txt_select_code_1.setPlainText(
                       
 '''
@@ -206,7 +207,7 @@ void permute(char *a, int l, int r)
 {
    int i;
    if (l == r)
-     printf("%s", a);
+     printf("%s\n", a);
    else
    {
        for (i = l; i <= r; i++)
@@ -256,14 +257,8 @@ int main()
          msg.show()
          msg.exec_()
 
-     def convertToKeyword(self, qString) :
-         replacer = synonym_search.CsvWordReplacer('src/keyword_/synonym_test.csv')
-         qSplited = qString.split(' ')
-         qReplaced=''
-         for i in qSplited :
-             qReplaced += replacer.replace(i)
-             qReplaced += ' '
-         return qReplaced
+     def convertToKeyword(self, qString):
+         return synonym_search.refine(qString)
 
      #def inputOutput(self, keyword) :
      #    list_crawling = crawling_controller.search('quick sort', 'cpp')

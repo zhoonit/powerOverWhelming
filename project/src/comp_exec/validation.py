@@ -71,7 +71,7 @@ def get_compile_result(temp_des, code_ext):
 	if code_ext == 'cpp':
 		exe_name = os.getcwd()+'\\'+next(tempfile._get_candidate_names())
 		try:
-			command = [find_util(), source_name , '-o', exe_name]
+			command = [find_util(), '-std=c++11', source_name , '-o', exe_name]
 
 			result = subprocess.check_output(command, stderr = subprocess.STDOUT, shell=True)
 

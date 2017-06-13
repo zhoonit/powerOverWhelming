@@ -11,7 +11,7 @@
 
         # GUI 함수 바인딩 하는방법 숙지 ~ 구산 due 6/2 
 
-        language patch ~ 재국 pending
+        # language patch ~ 재국 pending
 
         # crawling ~ 지훈 due 6/3
 
@@ -24,7 +24,7 @@
         # git hub 구조 개편 ~ 지훈 due 5/31 완료
 
         # GUI에 통합 ~ 전체 6/4 모여서
-	   '''컴파일빼고
+	   '''컴파일빼고'''
 
     
     

@@ -5,6 +5,8 @@
 \usepackage{adjustbox}
 \usepackage{graphicx}
 \usepackage{alphalph}
+\usepackage{url}
+\usepackage[colorlinks]{hyperref}
 
 \let\OLDitemize\itemize
 \renewcommand\itemize{\OLDitemize\addtolength{\itemsep}{1em}}
@@ -333,7 +335,7 @@ There are numerous codes that are floating on the internet. But it is not verifi
   \end{itemize}
   \item copy button
   \begin{itemize}
-    \item ???
+    \item button to copy code snippets to clipboard
   \end{itemize}
 \end{itemize}
 \textit{ }
@@ -394,8 +396,8 @@ There are numerous codes that are floating on the internet. But it is not verifi
   \begin{itemize}
     \item Fast search from programmer forum
     \item Crawling data from Stackoverflow
-    \item Second search
   \end{itemize}
+  \item Second search
   \begin{itemize}
     \item Broad search through search engine
     \item Crawling data from Google
@@ -1075,11 +1077,11 @@ Coding Helper gives the code.
 \begin{enumerate}
   \item Description
   \begin{itemize}
-    \item Showing result and providing process check and copy function to user (see Figure~\ref{fig_concept_validation_manual}.
+    \item Showing result and providing process check and copy function to user (see Figure~\ref{fig_concept_validation_manual}).
   \end{itemize}
   \item Process(or I/O)
   \begin{enumerate}
-    \item 3 button – Input, Output, Copy Code
+    \item 3 buttons – Input, Output, Copy Code
   \end{enumerate}
 \end{enumerate}
 \textit{}
@@ -1528,8 +1530,6 @@ This use case specifies how the program act when x buttons are clicked
 \end{itemize}
 \textit{}
 
-
-
 \subsubsection{program exit}
 This use case specifies how to close the program.
 \begin{itemize}
@@ -1541,15 +1541,136 @@ This use case specifies how to close the program.
 
 
 % section use_case (end)
+\section{Installation Guide}%(fold)
+\label{sec:installation guide}
+\textit{}
 
-\begin{figure*}
+\subsection{Install Guide}
+  We pre-compiled all necessary files so user does not have to install and setting.
+  Users just have to 1. download all the file, 2. extract file and 3. just execute it.
+
+  \subsubsection{Download Files}
+    We uploaded portable package at google drive and made direct download URL. User can simply download this portable package at 
+    \url{https://drive.google.com/open?id=0B9aiOILFud23c1FXbkN6azM3WmM}.
+
+    See Figure~\ref{fig_download}
+      \begin{figure}[ht]
+      \centering
+      \includegraphics[width=0.5\textwidth]{./figures/downloadURL.jpg}
+      %text slot
+      \caption{Downloading the files.}
+      \label{fig_download}
+      \end{figure}
+
+  \subsubsection{Extract Files}
+    Downloaded file name is exe.win-amd64-3.6.zip. Extract this file with own extraction program such as WinZip, WinRAR, 7-zip, Alzip, Bandizip, and so on.
+    Extraction takes time, so wait with a cup of tea.
+
+    See Figure~\ref{fig_extraction}. and Figure~\ref{fig_extracting}.
+    \begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./figures/extraction.jpg}
+    %text slot
+    \caption{Extraction of the files.}
+    \label{fig_extraction}
+    \end{figure}
+
+    \begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./figures/extracting.jpg}
+    %text slot
+    \caption{Extracting the files.}
+    \label{fig_extracting}
+    \end{figure}
+
+
+  \subsubsection{Excute the file} In exe.win-amd64-3.6.zip, there is main.exe, which is one-click-executable file. User only need to double click it after extracting exe.win-amd64-3.6.zip. For convinience, we made a shortcut to execute main.exe on the root directory.
+  See Figure~\ref{fig_excution}.
+    \begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./figures/execution.jpg}
+    %text slot
+    \caption{execution of the files.}
+    \label{fig_excution}
+    \end{figure}
+
+  \subsubsection{User Guide}
+  User Guide is included with the name README.docx
+
+  Or see Appendix~\ref{user_guide}.
+
+\subsection{Included Modules}
+\begin{enumerate}
+\item{Python}
+\begin{itemize}
+\item Our program is based on python. For our program, we used Python3.6.0
+User should download Python3.6.0 for executing our program
+So we enclose Python36 in our installation package.
+\end{itemize}
+\item{PyQt5}
+\begin{itemize}
+\item UI of our program is made with PyQt5.
+User should download PyQt5 for seeing User Interface of our program.
+So we enclose PyQt5 in our installation package.
+\end{itemize}
+\item{Dev-C++}\\
+\begin{itemize}
+\item For compiling code, user should download GNU Compiler Collection.
+So we enclose Dev-C++ in our installation package.
+\end{itemize}
+\end{enumerate}
+
+%section installation guid end
+\vfill
+
+\onecolumn
+\appendices
+
+
+\section{Overall Architecture}
+\begin{figure}[ht]
 \centering
-\includegraphics[width=1\textwidth]{./figures/overall_arch.jpg}
+\includegraphics[width=0.9\textwidth]{./figures/overall_arch.jpg}
 %description of module get\_info
 \caption{Description of Overall Architecture}
 \label{overall}
-\end{figure*}
+\end{figure}
 
+\pagebreak
+
+\section{User Guide}
+\label{user_guide}
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\textwidth]{./figures/1-3.png}
+%description of module get\_info
+\caption{}
+\label{user1}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\textwidth]{./figures/4-5.png}
+%description of module get\_info
+\caption{}
+\label{user2}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\textwidth]{./figures/6.png}
+%description of module get\_info
+\caption{}
+\label{user3}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\textwidth]{./figures/7-8.png}
+%description of module get\_info
+\caption{}
+\label{user4}
+\end{figure}
 
 % ''-------------end of the document-------------------''
 % % figure example --------------

@@ -7,7 +7,7 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-import guiSelectCode
+from . import guiSelectCode
 
 class GuiErrorCode(QtWidgets.QMainWindow):
     def setupUi(self, MainWindow):

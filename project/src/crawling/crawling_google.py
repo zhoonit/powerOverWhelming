@@ -64,7 +64,11 @@ class CandidatesGoogle(Candidates):
 				url = re.sub(r'github\.com', 'raw.githubusercontent.com', url) #github는 raw로 바꿔줌
 				url = re.sub(r'\/blob', '', url)
 			try:
-				codes.append(Candidates.get_request(url).text)
+				target_text = Candidates.get_request(url).text
+				if re.search(r'<!DOCTYPE html>', target_text) is not None:
+					target_text = ""
+				codes.append(target_text)
+
 			except (requests.exceptions.ConnectTimeout, requests.exceptions.ReadTimeout):
 				continue
 
