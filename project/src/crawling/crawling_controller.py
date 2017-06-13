@@ -1,18 +1,15 @@
 import sys
 
-sys.path.insert(0, 'c:/cGit/project/src/comp_exec')
-import validation
-from crawling_common import *
-from crawling_stack import *
-from crawling_google import *
+from . import crawling_stack
+from . import crawling_google
 
 def search(query, type = ''):
 	'''
 	@query : 키워드
 	@type : 코드의 종류, CODE_TYPE 참조
 	'''
-	stack = CandidatesStack(query, type)
-	google = CandidatesGoogle(query, type)
+	stack = crawling_stack.CandidatesStack(query, type)
+	google = crawling_google.CandidatesGoogle(query, type)
 
 	results = stack + google
 

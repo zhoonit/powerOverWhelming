@@ -1,7 +1,7 @@
 # import urllib.parse
 import bs4
 import re
-from crawling_common import *
+from ..crawling.crawling_common import *
 
 URL_GOOGLE = "https://www.google.co.kr/search?q="
 GOOGLE_ADDED_POINT = 10

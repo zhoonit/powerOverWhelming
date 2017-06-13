@@ -1,7 +1,7 @@
 # import urllib.parse
 import json
 import bs4
-from crawling_common import *
+from ..crawling.crawling_common import *
 
 URL_STACK = "http://api.stackexchange.com/2.2/"
 STACK_ADDED_POINT = -1

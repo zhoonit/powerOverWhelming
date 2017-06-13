@@ -33,12 +33,15 @@ class GuiCompileSuccess(QtWidgets.QMainWindow) :
         self.label_3.setFont(font)
         self.label_3.setAlignment(QtCore.Qt.AlignCenter)
         self.label_3.setObjectName("label_3")
-        self.btn_copy_code = QtWidgets.QPushButton(self.centralwidget)
-        self.btn_copy_code.setGeometry(QtCore.QRect(770, 900, 131, 31))
-        self.btn_copy_code.setObjectName("btn_copy_code")
-        self.btn_test_compile = QtWidgets.QPushButton(self.centralwidget)
-        self.btn_test_compile.setGeometry(QtCore.QRect(770, 940, 131, 31))
-        self.btn_test_compile.setObjectName("btn_test_compile")
+
+        self.btn_prev = QtWidgets.QCommandLinkButton(self.centralwidget)
+        self.btn_prev.setGeometry(QtCore.QRect(690, 900, 221, 41))
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(10)
+        self.btn_prev.setFont(font)
+        self.btn_prev.setObjectName("btn_prev")
+
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
@@ -52,24 +55,31 @@ class GuiCompileSuccess(QtWidgets.QMainWindow) :
         MainWindow.setWindowTitle(_translate("MainWindow", "Compile Complete"))
         self.label.setText(_translate("MainWindow", "Compile Complete"))
         self.label_3.setText(_translate("MainWindow", "Output"))
-        self.btn_copy_code.setText(_translate("MainWindow", "Copy Code"))
-        self.btn_test_compile.setText(_translate("MainWindow", "Test Compile"))
+        self.btn_prev.setText(_translate("MainWindow", "Select Another Code"))
+        #self.btn_copy_code.setText(_translate("MainWindow", "Copy Code"))
+        #self.btn_test_compile.setText(_translate("MainWindow", "Test Compile"))
 
     def __init__(self):
         QtWidgets.QMainWindow.__init__(self)
         self.setupUi(self)
-        self.txt_output_test.setPlainText('123, 132, 213, 231, 312, 321')
-        self.btn_test_compile.clicked.connect(self.testCompile)
+        self.btn_prev.clicked.connect(self.goPrev)
 
-    def testCompile(self) :
-        array = self.txt_input_test.toPlainText().split(',')
-        array.sort()
-        i=0
-        str_arr=""
-        while(i<len(array)) :
-            str_arr+=array[i] + ","
-            i=i+1
-        self.txt_output_test.setPlainText(str_arr)
+    def goPrev(self) :
+        global window_select_code
+
+        self.close()
+
+    #    self.btn_test_compile.clicked.connect(self.testCompile)
+
+    #def testCompile(self) :
+    #    array = self.txt_input_test.toPlainText().split(',')
+    #    array.sort()
+    #    i=0
+    #    str_arr=""
+    #    while(i<len(array)) :
+    #        str_arr+=array[i] + ","
+    #        i=i+1
+    #    self.txt_output_test.setPlainText(str_arr)
 
         #codeCompleteText = guiSelectCode.GuiSelectCode.loadText(guiSelectCode.GuiSelectCode(self))
         #self.txt_code_complete.setPlainText(codeCompleteText)
