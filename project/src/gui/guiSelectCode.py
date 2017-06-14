@@ -12,7 +12,7 @@ class GuiSelectCode(QtWidgets.QMainWindow) :
 
       def setupUi(self, SelectCode):
         SelectCode.setObjectName("SelectCode")
-        SelectCode.resize(1300, 1000)
+        SelectCode.resize(1300, 1100)
         self.centralwidget = QtWidgets.QWidget(SelectCode)
         self.centralwidget.setObjectName("centralwidget")
         self.opt_select_code_3 = QtWidgets.QRadioButton(self.centralwidget)
@@ -41,6 +41,9 @@ class GuiSelectCode(QtWidgets.QMainWindow) :
         self.btn_compile_start = QtWidgets.QPushButton(self.centralwidget)
         self.btn_compile_start.setGeometry(QtCore.QRect(980, 890, 151, 51))
         self.btn_compile_start.setObjectName("btn_compile_start")
+        self.btn_return_search = QtWidgets.QPushButton(self.centralwidget)
+        self.btn_return_search.setGeometry(QtCore.QRect(980, 970, 151, 51))
+        self.btn_return_search.setObjectName("btn_return_search")
         self.opt_select_code_2 = QtWidgets.QRadioButton(self.centralwidget)
         self.opt_select_code_2.setGeometry(QtCore.QRect(640, 100, 21, 22))
         self.opt_select_code_2.setText("")
@@ -65,6 +68,7 @@ class GuiSelectCode(QtWidgets.QMainWindow) :
         SelectCode.setWindowTitle(_translate("SelectCode", "Select Code"))
         self.label.setText(_translate("SelectCode", "Select Code"))
         self.btn_compile_start.setText(_translate("SelectCode", "Compile!"))
+        self.btn_return_search.setText(_translate("SelectCode", "Return to Search"))
 
       def __init__(self):
          QtWidgets.QMainWindow.__init__(self)
@@ -74,11 +78,19 @@ class GuiSelectCode(QtWidgets.QMainWindow) :
       def initUi(self) :
         self.btn_compile_start.clicked.connect(self.compile_click)
         self.opt_select_code_1.setChecked(True)
+        self.btn_return_search.clicked.connect(self.return_search)
         #window_start = guiStart.GuiStart(self)
         #self.txt_select_code_1.setPlainText(window_start.inputOutput(window_start.edit_keyword.toPlainText())[0])
         #self.txt_select_code_2.setPlainText(window_start.inputOutput(window_start.edit_keyword.toPlainText())[1])
         #self.txt_select_code_3.setPlainText(window_start.inputOutput(window_start.edit_keyword.toPlainText())[2])
         
+
+      def return_search(self) :
+          global window_search_code
+          self.close()
+          window_search_code = guiStart.GuiStart()
+          window_search_code.show()
+
 
       def compile_click(self) :
         global window_compile_success
@@ -120,6 +132,3 @@ class GuiSelectCode(QtWidgets.QMainWindow) :
          else :
              print("radioButton 3 is toggled")
              return self.txt_select_code_3.toPlainText()
-
-
-       

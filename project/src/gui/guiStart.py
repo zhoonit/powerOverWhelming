@@ -183,7 +183,7 @@ int binomial(int n, int k)
 }
 
 int main() {
-printf("%d", binomial(3,2));
+printf("3c2 : %d", binomial(3,2));
 return 0;
 }''')
                   window_select.txt_select_code_2.setPlainText(list_crawling[1])
@@ -207,7 +207,7 @@ void permute(char *a, int l, int r)
 {
    int i;
    if (l == r)
-     printf("%s\n", a);
+     printf("%s\\n", a);
    else
    {
        for (i = l; i <= r; i++)

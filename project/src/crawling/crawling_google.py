@@ -65,7 +65,7 @@ class CandidatesGoogle(Candidates):
 				url = re.sub(r'\/blob', '', url)
 			try:
 				target_text = Candidates.get_request(url).text
-				if re.search(r'<!DOCTYPE html>', target_text) is not None:
+				if re.search(r'<!DOCTYPE html>', target_text, re.I) is not None:
 					target_text = ""
 				codes.append(target_text)
 
